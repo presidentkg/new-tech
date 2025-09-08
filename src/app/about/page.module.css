@@ -1,0 +1,17 @@
+.about-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 1rem;
+
+    @media (min-width: 1200px) {
+        padding-inline: 0;
+        max-width: 960px;
+        margin-inline: auto;
+    }
+}
+
+.image {
+    width: 100%;
+    height: auto;
+}
