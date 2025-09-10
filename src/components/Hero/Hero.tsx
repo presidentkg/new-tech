@@ -17,7 +17,7 @@ export default function Hero() {
                 slidesPerView={1}
                 navigation
                 pagination={{ clickable: true }}
-                autoplay={{ delay: 3000, disableOnInteraction: false }}
+                autoplay={{ delay: 5000, disableOnInteraction: false }}
                 speed={2500}
                 effect='coverflow'
                 mousewheel
@@ -36,7 +36,7 @@ export default function Hero() {
                         </div>
                         <div className={styles.center}>
                             <h1>Deal of the Week</h1>
-                            <HeroBtn btnText='See all products'/>
+                            <HeroBtn btnText='See all deals'/>
                         </div>
                         <div className={styles.cirkel}>
                             <span>Up to</span>
@@ -64,7 +64,7 @@ export default function Hero() {
                         </div>
                         <div className={styles.center}>
                             <h1>Discover your new phone</h1>
-                            <HeroBtn btnText='See all products'/>
+                            <HeroBtn btnText='See all phones'/>
                         </div>
                     </section>
                 </SwiperSlide>
@@ -80,7 +80,7 @@ export default function Hero() {
                         </div>
                         <div className={styles.center}>
                             <h1>Looking for a new tablet?</h1>
-                            <HeroBtn btnText='See all products'/>
+                            <HeroBtn btnText='See all tablets'/>
                         </div>
                     </section>
                 </SwiperSlide>

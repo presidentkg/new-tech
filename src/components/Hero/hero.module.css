@@ -9,6 +9,7 @@
   height: auto;
   margin: 0 auto;
   background-color: #938BAB;
+  border-radius: 0.5rem;
 }
 
 .hero p {
@@ -65,6 +66,7 @@
   background-color: #863AAF;
   color: white;
   padding: 1rem;
+  border-radius: 0.5rem;
 }
 
 .image {
@@ -82,4 +84,45 @@
   justify-content: space-between;
   align-items: center;
   gap: 5rem;
+}
+
+@media (max-width: 1300px) {
+  .hero {
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1rem;
+    height: 600px;
+  }
+
+  .cirkel {
+    width: 100px;
+    height: 100px;
+  }
+
+  .cirkel span:last-child {
+    font-size: 1rem;
+  }
+
+  .center {
+    gap: 2rem;
+  }
+  
+  :global(.swiper) {
+    max-width: 750px;
+  }
+}
+
+@media (max-width: 768px) {
+  :global(.swiper) {
+    max-width: 500px;
+  }
+}
+@media (max-width: 550px) {
+  :global(.swiper) {
+    max-width: 320px;
+  }
+
+  .image {
+    max-width: 200px;
+  }
 }
