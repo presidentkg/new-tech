@@ -1,0 +1,32 @@
+.categories {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  padding-bottom: 3rem;
+  background-color: #fff;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #222;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.category:hover,
+.category:hover .icon {
+  color: #938BAB;
+  transform: scale(1.05);
+}
+
+
+.icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.3rem;
+  color: #863AAF ;
+}
