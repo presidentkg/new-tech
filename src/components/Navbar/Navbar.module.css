@@ -1,0 +1,103 @@
+.navbar {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.topBar {
+  background-color: #868686;
+  font-size: 0.8rem;
+  color: #fff;
+}
+
+.topBar ul {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0.3rem 1rem;
+  margin: 0;
+  list-style: none;
+}
+
+.topBar li {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem; 
+  color: #fff;
+  font-size: 0.85rem;
+}
+
+
+.mainNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 2rem;
+  background-color: #fff;
+  gap: 2rem;
+}
+
+.logoWrapper {
+  flex: 0 0 auto;
+}
+
+.searchWrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.logoImage {
+  height: auto;
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.logoImage:hover {
+  transform: scale(1.05);
+}
+
+.navActions {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navLinks {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navLink {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.navLink:hover {
+  color: #666;
+  transform: scale(1.05);
+}
+
+.icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.3rem;
+  color: #863AAF ;
+}
+
+.cart .navLink {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

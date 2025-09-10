@@ -1,4 +1,5 @@
 import { getProductsByCategory } from "@/lib/utils/utils";
+
 import styles from "./page.module.css";
 import { ProductList } from "@/components/ProductList";
 
@@ -16,7 +17,6 @@ export default async function Home() {
           {/* <ProductList products={smartphones} /> */}
           <ProductList products={laptops} />
         </div>
-      </main>
     </div>
   );
 }
