@@ -1,0 +1,26 @@
+.hero {
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 10rem;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  background-color: aqua;
+}
+
+.hero p {
+  text-align: center;
+}
+
+@media (prefers-color-scheme: dark) {
+  .hero {
+    border: 2px solid white;
+  }
+}
+
+:global(.swiper) {
+  max-width: 1200px;
+}
