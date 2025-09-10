@@ -1,9 +1,9 @@
 "use client";
 
 import { useRouter } from 'next/navigation';
-import styles from './Hero.module.css'
+import styles from './hero.module.css'
 
-export default function HeroBtn() {
+export default function HeroBtn({btnText} : {btnText: string}) {
     const { push } = useRouter();
 
     const handleHeroBtnClick = () => {
@@ -15,7 +15,7 @@ export default function HeroBtn() {
             className={styles.heroBtn}
             onClick={handleHeroBtnClick}
         >
-            Shop Now
+            {btnText}
         </button>
     )
 }

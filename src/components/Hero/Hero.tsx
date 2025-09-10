@@ -6,7 +6,8 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import HeroBtn from './HeroBtn'
-import styles from './Hero.module.css'
+import Image from "next/image";
+import styles from './hero.module.css'
 
 export default function Hero() {
     return (
@@ -25,40 +26,65 @@ export default function Hero() {
             >
                 <SwiperSlide>
                     <section className={styles.hero}>
-                        <h1>Newtech - your new tech marketplace</h1>
-                        <p>Welcome to NewTech - your technology expert. We offer a curated selection of the latest phones, laptops, and tablets from the world&apos;s leading brands.<br></br>
-                        Whether you&apos;re looking for power for gaming, a thin and portable laptop for studying, or the newest mobile to stay connected, we have the solution for you.<br></br>
-                        Discover the perfect tech for your lifestyle.</p>
-                        <HeroBtn />
+                        <div className={styles.image}>
+                            <Image
+                                src="/images/laptop.webp"
+                                alt={"laptop image"}
+                                width={150}
+                                height={150}
+                            />
+                        </div>
+                        <div className={styles.center}>
+                            <h1>Deal of the Week</h1>
+                            <HeroBtn btnText='See all products'/>
+                        </div>
+                        <div className={styles.cirkel}>
+                            <span>Up to</span>
+                            <span>50% OFF</span>
+                        </div>
                     </section>
                 </SwiperSlide>
                 <SwiperSlide>
                     <section className={styles.hero}>
-                        <h1>Newtech - your new tech marketplace</h1>
-                        <p>Welcome to NewTech - your technology expert. We offer a curated selection of the latest phones, laptops, and tablets from the world&apos;s leading brands.<br></br>
-                        Whether you&apos;re looking for power for gaming, a thin and portable laptop for studying, or the newest mobile to stay connected, we have the solution for you.<br></br>
-                        Discover the perfect tech for your lifestyle.</p>
-                        <HeroBtn />
+                        <div className={styles.image}>
+                            <Image
+                                src="/images/phone.webp"
+                                alt={"laptop image"}
+                                width={150}
+                                height={150}
+                            />
+                        </div>
+                        <div className={styles.image}>
+                            <Image
+                                src="/images/phone2.webp"
+                                alt={"laptop image"}
+                                width={150}
+                                height={150}
+                            />
+                        </div>
+                        <div className={styles.center}>
+                            <h1>Discover your new phone</h1>
+                            <HeroBtn btnText='See all products'/>
+                        </div>
                     </section>
                 </SwiperSlide>
                 <SwiperSlide>
                     <section className={styles.hero}>
-                        <h1>Newtech - your new tech marketplace</h1>
-                        <p>Welcome to NewTech - your technology expert. We offer a curated selection of the latest phones, laptops, and tablets from the world&apos;s leading brands.<br></br>
-                        Whether you&apos;re looking for power for gaming, a thin and portable laptop for studying, or the newest mobile to stay connected, we have the solution for you.<br></br>
-                        Discover the perfect tech for your lifestyle.</p>
-                        <HeroBtn />
+                        <div className={styles.image}>
+                            <Image
+                                src="/images/tablet.webp"
+                                alt={"laptop image"}
+                                width={150}
+                                height={150}
+                            />
+                        </div>
+                        <div className={styles.center}>
+                            <h1>Looking for a new tablet?</h1>
+                            <HeroBtn btnText='See all products'/>
+                        </div>
                     </section>
                 </SwiperSlide>
-                <SwiperSlide>
-                    <section className={styles.hero}>
-                        <h1>Newtech - your new tech marketplace</h1>
-                        <p>Welcome to NewTech - your technology expert. We offer a curated selection of the latest phones, laptops, and tablets from the world&apos;s leading brands.<br></br>
-                        Whether you&apos;re looking for power for gaming, a thin and portable laptop for studying, or the newest mobile to stay connected, we have the solution for you.<br></br>
-                        Discover the perfect tech for your lifestyle.</p>
-                        <HeroBtn />
-                    </section>
-                </SwiperSlide>
+                
             </Swiper>
         </section>
 
