@@ -3,13 +3,25 @@
     grid-template-columns: 1fr;
     gap: 5rem;
     padding: 3rem 1rem;
+
+    @media (min-width: 576px) {
+        padding-inline: 4rem;
+    }
+
+    @media (min-width: 768px) {
+        padding-inline: 8rem;
+    }
     
-    @media (min-width: 1200px) {
+    @media (min-width: 992px) {
         grid-template-columns: 1fr 1fr;
         gap: 2rem;
         padding: 4rem 0;
-        max-width: 960px;
+        max-width: 900px;
         margin-inline: auto;
+    }
+    
+    @media (min-width: 1200px) {
+        max-width: 1000px;
     }
 }
 
@@ -72,7 +84,7 @@
     &:first-of-type {
         margin-block: 0 2rem;
         
-        @media (min-width: 1200px) {
+        @media (min-width: 992px) {
             margin-block: 2rem 6rem;
         }
     }
@@ -90,7 +102,7 @@
     transition: all ease-in 200ms;
 
     &:hover {
-        background-color: #b452e9;
+        background-color: #938bab;
     }
 }
 
