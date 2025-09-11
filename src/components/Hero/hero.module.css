@@ -36,7 +36,7 @@
 }
 
 
-.cirkel {
+.circle {
   width: 150px;
   height: 150px;
   border: 2px solid black;
@@ -52,11 +52,11 @@
   padding: 0.5rem;
 }
 
-.cirkel span:first-child {
+.circle span:first-child {
   font-size: 0.75rem;
 }
 
-.cirkel span:last-child {
+.circle span:last-child {
   font-size: 1.5rem;
   font-weight: bold;
   margin-top: -5px;
