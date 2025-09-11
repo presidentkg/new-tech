@@ -1,0 +1,119 @@
+.inner-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5rem;
+    padding: 3rem 1rem;
+
+    @media (min-width: 576px) {
+        padding-inline: 4rem;
+    }
+
+    @media (min-width: 768px) {
+        padding-inline: 8rem;
+    }
+    
+    @media (min-width: 992px) {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        padding: 4rem 0;
+        max-width: 900px;
+        margin-inline: auto;
+    }
+    
+    @media (min-width: 1200px) {
+        max-width: 1000px;
+    }
+}
+
+.bg-image {
+    background-image: url("/about-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0% 0%;
+    position: relative;
+    z-index: -1;
+    
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.35);
+      z-index: -1;
+    }
+}
+
+.bg-inner {
+    text-align: center;
+    padding: 5rem 1rem;
+    color: white;
+
+    @media (min-width: 1200px) {
+        padding-inline: 0;
+        max-width: 960px;
+        margin-inline: auto;
+    }
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.h1-heading, .h2-heading {
+    line-height: 1.2;
+}
+
+.h1-heading {
+    margin-bottom: 0.5rem;
+}
+
+.h2-heading {
+    padding: 0 1rem 0.7rem;
+    border-bottom: 3px solid #938bab;
+}
+
+.paragraph {
+    text-align: center;
+    line-height: 1.5;
+    
+    &:first-of-type {
+        margin-block: 0 2rem;
+        
+        @media (min-width: 992px) {
+            margin-block: 2rem 6rem;
+        }
+    }
+}
+
+.button {
+    margin-top: 1rem;
+    padding: 0.7em 1.4em;
+    border-radius: 0.3em;
+    border: 0;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #863aaf;
+    cursor: pointer;
+    transition: all ease-in 200ms;
+
+    &:hover {
+        background-color: #938bab;
+    }
+}
+
+.images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    background-color: #eee;
+}
