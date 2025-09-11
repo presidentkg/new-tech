@@ -1,7 +1,7 @@
 import styles from "./page.module.css";
+import { ProductList } from "@/components/ProductList/ProductList";
 import Hero from "@/components/Hero/Hero";
 import { getProductsByCategory } from "@/lib/utils/utils";
-import { ProductList } from "@/components/ProductList";
 
 export default async function Home() {
   const smartphones = await getProductsByCategory("smartphones");

@@ -5,11 +5,21 @@
   width: 100%;
   max-width: 800px;
   background-color: #f9f9f9;
-  border: 2px solid #938BAB;
+  border: 2px solid #938bab;
   border-radius: 0.2rem;
   padding: 0.5rem 1rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   transition: border-color 0.2s ease;
+}
+
+.hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .input {
@@ -22,7 +32,7 @@
 
 .button {
   border: none;
-  background-color: #863AAF;
+  background-color: #863aaf;
   color: white;
   font-size: 0.9rem;
   font-weight: 500;
@@ -33,5 +43,5 @@
 }
 
 .button:hover {
-  background-color: #938BAB;
+  background-color: #938bab;
 }
