@@ -15,8 +15,9 @@ export default async function Home() {
       <main className={styles.main}>
         <Hero />
         <div className={styles.productList}>
-          {/* <ProductList products={smartphones} /> */}
+          <ProductList products={smartphones} />
           <ProductList products={laptops} />
+          <ProductList products={tablets} />
         </div>
       </main>
     </div>
