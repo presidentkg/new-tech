@@ -1,0 +1,62 @@
+.card{
+    border: 2px solid #863AAF;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 1.5rem;
+    gap: 1rem;
+    width: 20%;  
+}
+
+.image {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.saleBadge{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #863AAF;
+  color: white;
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 1rem;
+  z-index: 10;
+}
+
+.priceWrapper{
+    display: flex;
+    gap: 1rem;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.pricingDetails{
+    display: flex;
+    flex-direction: column;
+    font-size: 0.75rem;
+}
+
+.save{
+    display: inline-block;
+    flex-shrink: 0;
+    align-self: flex-start;
+    padding: 0.2rem;
+    background-color: #FFDD00;
+}
+
+.originalPrice{
+    margin-left: 0.2rem;
+}
