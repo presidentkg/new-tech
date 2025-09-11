@@ -1,6 +1,6 @@
-import { getProductsByCategory } from "@/lib/utils/utils";
-
 import styles from "./page.module.css";
+import Hero from "@/components/Hero/Hero";
+import { getProductsByCategory } from "@/lib/utils/utils";
 import { ProductList } from "@/components/ProductList";
 
 export default async function Home() {
@@ -13,8 +13,9 @@ export default async function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
+        <Hero />
         <div className={styles.productList}>
-          <ProductList products={smartphones} /> 
+          <ProductList products={smartphones} />
           <ProductList products={laptops} />
           <ProductList products={tablets} />
         </div>
