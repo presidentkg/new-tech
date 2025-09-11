@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import styles from "./Page.module.css";
+import StarReview from "@/components/StarReview/StarReviews";
+import PriceTag from "@/components/PriceTag/PriceTag";
 
 interface ProductPageProps {
   params: { id: string };
@@ -31,8 +33,12 @@ export default async function ProductPage({ params }: ProductPageProps) {
   return (
     <div className={styles.page}>
       <div className={styles.layout}>
-
         <div className={styles.imageWrapper}>
+          {product.discountPercentage > 0 && (
+            <div className={styles.saleBadge}>
+              -{product.discountPercentage}%
+            </div>
+          )}
           <Image
             src={product.thumbnail}
             alt={product.title}
@@ -43,8 +49,16 @@ export default async function ProductPage({ params }: ProductPageProps) {
         </div>
 
         <div className={styles.info}>
-          <h1 className={styles.title}>{product.title}</h1>
-          <p className={styles.price}>${product.price}</p>
+          <h2 className={styles.title}>{product.title}</h2>
+          <PriceTag
+            price={product.price}
+            discountPercentage={product.discountPercentage}
+          />
+          <StarReview
+            rating={product.rating}
+            reviews={product.reviews.length}
+          />
+
           <p className={styles.stock}>
             {product.stock > 0 ? "In stock" : "Out of stock"}
           </p>
@@ -55,7 +69,6 @@ export default async function ProductPage({ params }: ProductPageProps) {
       <div className={styles.details}>
         <h2>Product Description</h2>
         <p>{product.description}</p>
-        <p>Rating: {product.rating}</p>
         <p>Estimated shipping: 2-5 days</p>
       </div>
     </div>

@@ -17,9 +17,8 @@ export default async function Home() {
           <ProductList products={smartphones} />
           <ProductList products={laptops} />
           <ProductList products={tablets} />
-          
         </div>
-        </main>
+      </main>
     </div>
   );
 }

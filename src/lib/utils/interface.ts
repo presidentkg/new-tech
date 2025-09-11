@@ -37,3 +37,8 @@ export interface Product {
     reviewerEmail: string;
   }[];
 }
+
+export interface StarReviewProps {
+  rating: number;  
+  reviews: number;  
+}
