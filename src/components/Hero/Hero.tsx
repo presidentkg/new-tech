@@ -36,7 +36,7 @@ export default function Hero() {
                         </div>
                         <div className={styles.center}>
                             <h1>Deal of the Week</h1>
-                            <HeroBtn btnText='See all deals'/>
+                            <HeroBtn btnText='See all deals' directions='products'/>
                         </div>
                         <div className={styles.cirkel}>
                             <span>Up to</span>
@@ -64,7 +64,7 @@ export default function Hero() {
                         </div>
                         <div className={styles.center}>
                             <h1>Discover your new phone</h1>
-                            <HeroBtn btnText='See all phones'/>
+                            <HeroBtn btnText='See all phones' directions='products'/>
                         </div>
                     </section>
                 </SwiperSlide>
@@ -80,7 +80,7 @@ export default function Hero() {
                         </div>
                         <div className={styles.center}>
                             <h1>Looking for a new tablet?</h1>
-                            <HeroBtn btnText='See all tablets'/>
+                            <HeroBtn btnText='See all tablets' directions='products'/>
                         </div>
                     </section>
                 </SwiperSlide>
