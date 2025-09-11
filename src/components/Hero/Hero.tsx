@@ -38,7 +38,7 @@ export default function Hero() {
                             <h1>Deal of the Week</h1>
                             <HeroBtn btnText='See all deals' directions='products'/>
                         </div>
-                        <div className={styles.cirkel}>
+                        <div className={styles.circle}>
                             <span>Up to</span>
                             <span>50% OFF</span>
                         </div>
