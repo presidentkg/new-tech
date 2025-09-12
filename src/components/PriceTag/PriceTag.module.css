@@ -1,0 +1,26 @@
+.priceTag {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-family: Arial, sans-serif;
+}
+
+.oldPrice {
+  text-decoration: line-through;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.newPrice {
+  color: #e60023;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+.discount {
+  background: #ffffff;
+  color: #e60023;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}

@@ -1,0 +1,26 @@
+.primary {
+  background-color: #863AAF;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
+}
+
+.primary:hover {
+  background-color: #ffffff; 
+  color: #863AAF;
+  border: 1px solid #863AAF; 
+}
+
+.primary:active {
+  transform: scale(0.97);
+}
+
+.primary:disabled {
+  background-color: #b894d1;
+  cursor: not-allowed;
+}

@@ -1,0 +1,21 @@
+.starReview {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.filled {
+  color: #f5c518;
+  font-size: 1.2rem;
+}
+
+.empty {
+  color: #ccc; 
+  font-size: 1.2rem;
+}
+
+.reviews {
+  font-size: 0.9rem;
+  color: #777;
+  margin-left: 0.3rem;
+}
