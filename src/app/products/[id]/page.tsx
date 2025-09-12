@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "./Page.module.css";
 import StarReview from "@/components/StarReview/StarReviews";
 import PriceTag from "@/components/PriceTag/PriceTag";
+import Button from "@/components/Button/Button";
 
 interface ProductPageProps {
   params: { id: string };
@@ -62,14 +63,15 @@ export default async function ProductPage({ params }: ProductPageProps) {
           <p className={styles.stock}>
             {product.stock > 0 ? "In stock" : "Out of stock"}
           </p>
-          <button className={styles.buyButton}>Add to Cart</button>
+          <div className={styles.details}>
+            <h3>Product Description</h3>
+            <p>{product.description}</p>
+            <p>Estimated shipping: 2-5 days</p>
+          </div>
+          <Button>
+            Add to Cart
+          </Button>
         </div>
-      </div>
-
-      <div className={styles.details}>
-        <h2>Product Description</h2>
-        <p>{product.description}</p>
-        <p>Estimated shipping: 2-5 days</p>
       </div>
     </div>
   );

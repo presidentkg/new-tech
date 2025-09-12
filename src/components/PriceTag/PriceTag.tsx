@@ -14,12 +14,9 @@ export default function PriceTag({ price, discountPercentage }: PriceTagProps) {
   return (
     <div className={styles.priceTag}>
       {discountPercentage > 0 && (
-        <span className={styles.oldPrice}>${oldPrice}</span>
+        <span className={styles.oldPrice}>{oldPrice}:-</span>
       )}
-      <span className={styles.newPrice}>${newPrice}</span>
-      {discountPercentage > 0 && (
-        <span className={styles.discount}>-{discountPercentage}%</span>
-      )}
+      <span className={styles.newPrice}>{newPrice}:-</span>
     </div>
   );
 }

@@ -7,7 +7,7 @@ export default function CategorySelector() {
     <div className={styles.categories}>
       <Link href="/products?category=iphone" className={styles.category}>
         <FaMobileAlt className={styles.icon} />
-        <span>iPhones</span>
+        <span>Phones</span>
       </Link>
 
       <Link href="/products?category=tablet" className={styles.category}>
