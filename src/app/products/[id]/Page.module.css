@@ -58,7 +58,7 @@
 .stock {
   font-size: 0.95rem;
   font-weight: 500;
-  color: #28a745; /* green for in stock */
+  color: #28a745;
 }
 
 .buyButton {
