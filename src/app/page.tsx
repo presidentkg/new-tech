@@ -1,7 +1,7 @@
-import { getProductsByCategory } from "@/lib/utils/utils";
-
 import styles from "./page.module.css";
-import { ProductList } from "@/components/ProductList";
+import { ProductList } from "@/components/ProductList/ProductList";
+import Hero from "@/components/Hero/Hero";
+import { getProductsByCategory } from "@/lib/utils/utils";
 
 export default async function Home() {
   const smartphones = await getProductsByCategory("smartphones");
@@ -13,6 +13,7 @@ export default async function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
+        <Hero />
         <div className={styles.productList}>
           <ProductList products={smartphones} />
           <ProductList products={laptops} />
