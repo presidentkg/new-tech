@@ -13,20 +13,20 @@ export default function ProductCard({product} : {product: Product}) {
                 <Image
                     src={product.images[0]}
                     alt={"product image"}
-                    width={150}
-                    height={150}
+                    width={200}
+                    height={200}
                 />
                 <div className={styles.saleBadge}>SALE!</div>
             </header>
-            <section>
+            <section className={styles.content}>
                 <h3>{product.title}</h3>
                 <p>{product.description}</p>
             </section>
             <footer className={styles.priceWrapper}>
-                <p className={styles.price}>{product.price} :-</p>
+                <span className={styles.price}>{product.price} :-</span>
                 <div className={styles.pricingDetails}>
                     <p className={styles.save}>Save {discount} :-</p>
-                    <p className={styles.originalPrice}>Original price: {originalPrice} :-</p> 
+                    <span className={styles.originalPrice}>Original price: {originalPrice} :-</span> 
                 </div>
             </footer>
             <StockStatus stock={product.stock} />
