@@ -23,11 +23,6 @@ export default async function Home() {
         <Hero />
         <h1>Deal of the Week</h1>
         <ProductSwiper products = {featuredProducts} />
-        <div className={styles.productList}> {/*Ska tas bort nu när swipern är på plats? */}
-          <ProductList products={smartphones} />
-          <ProductList products={laptops} />
-          <ProductList products={tablets} />
-        </div>
       </main>
     </div>
   );
