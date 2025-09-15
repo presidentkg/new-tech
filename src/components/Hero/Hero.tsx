@@ -46,21 +46,23 @@ export default function Hero() {
                 </SwiperSlide>
                 <SwiperSlide>
                     <section className={styles.hero}>
-                        <div className={styles.image}>
-                            <Image
-                                src="/images/phone.webp"
-                                alt={"laptop image"}
-                                width={150}
-                                height={150}
-                            />
-                        </div>
-                        <div className={styles.image}>
-                            <Image
-                                src="/images/phone2.webp"
-                                alt={"laptop image"}
-                                width={150}
-                                height={150}
-                            />
+                        <div className={styles.images}>
+                            <div className={styles.image}>
+                                <Image
+                                    src="/images/phone.webp"
+                                    alt={"laptop image"}
+                                    width={150}
+                                    height={150}
+                                />
+                            </div>
+                            <div className={styles.image}>
+                                <Image
+                                    src="/images/phone2.webp"
+                                    alt={"laptop image"}
+                                    width={150}
+                                    height={150}
+                                />
+                            </div>
                         </div>
                         <div className={styles.center}>
                             <h1>Discover your new phone</h1>
