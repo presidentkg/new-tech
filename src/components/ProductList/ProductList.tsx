@@ -4,6 +4,9 @@ import Image from "next/image";
 import { Product } from "@/lib/utils/interface";
 import styles from "./ProductList.module.css";
 import Link from "next/link";
+import StarReview from "../StarReview/StarReviews";
+import StockStatus from "../StockStatus/StockStatus";
+import Price from "../Price/Price";
 
 type ProductListProps = {
   products: Product[];
@@ -28,9 +31,11 @@ export function ProductList({ products }: ProductListProps) {
                 <div className={styles.details}>
                   <h3>{product.title}</h3>
                   <p>{product.description}</p>
+                  <StarReview rating={product.rating} reviews={product.reviews.length} />
+                  <StockStatus stock={product.stock} shippingInfo={product.shippingInformation}/>
                 </div>
-                <p className={styles.price}>{product.price}</p>
               </div>
+              <Price product={product} />
             </article>
           </Link>
         </li>
