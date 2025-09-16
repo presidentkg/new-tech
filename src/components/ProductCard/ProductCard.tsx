@@ -3,6 +3,7 @@ import styles from "./ProductCard.module.css";
 import Image from "next/image";
 import StockStatus from "../StockStatus/StockStatus";
 import Link from "next/link";
+import StarReview from "../StarReview/StarReviews";
 
 export default function ProductCard({product} : {product: Product}) {
     const originalPrice = (product.price / (1 - product.discountPercentage / 100)).toFixed(2);
@@ -21,6 +22,7 @@ export default function ProductCard({product} : {product: Product}) {
             <section className={styles.content}>
                 <h3>{product.title}</h3>
                 <p>{product.description}</p>
+                <StarReview rating={product.rating} reviews={product.reviews.length} />
             </section>
             <footer className={styles.priceWrapper}>
                 <span className={styles.price}>{product.price} :-</span>
