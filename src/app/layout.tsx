@@ -5,6 +5,7 @@ import "./globals.css";
 // Component Imports
 import Navbar from "@/components/Navbar/Navbar"
 import CategorySelector from "@/components/CategorySelector/CategorySelector";
+import Footer from "@/components/Footer/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,6 +33,7 @@ export default function RootLayout({
         <Navbar />
         <CategorySelector />
         {children}
+        <Footer />
       </body>
     </html>
   );
