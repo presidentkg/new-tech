@@ -17,6 +17,22 @@
   gap: 1rem;
   border: 2px solid hsl(279, 30%, 80%);
   border-radius: 0.5rem;
+  position: relative;
+}
+
+.saleBadge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: #863AAF;
+  color: #fff;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  z-index: 2;
+  transform: rotate(-10deg);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 .image {
@@ -39,6 +55,10 @@
   flex-direction: column;
   gap: 1rem;
   flex-basis: 70%;
+}
+
+.price {
+ margin-top: 0.5rem;
 }
 
 @media (min-width: 600px) {

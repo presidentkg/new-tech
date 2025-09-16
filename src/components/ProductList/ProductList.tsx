@@ -19,6 +19,11 @@ export function ProductList({ products }: ProductListProps) {
         <li key={product.id}>
           <Link href={`/products/${product.id}`}>
             <article className={styles.product}>
+              {product.discountPercentage > 0 && (
+                <div className={styles.saleBadge}>
+                  -{product.discountPercentage}%
+                </div>
+              )}
               <div className={styles.image}>
                 <Image
                   src={product.images[0]}
@@ -28,14 +33,16 @@ export function ProductList({ products }: ProductListProps) {
                 />
               </div>
               <div className={styles.detailsWrapper}>
-                <div className={styles.details}>
+                <section className={styles.details}>
                   <h3>{product.title}</h3>
                   <p>{product.description}</p>
                   <StarReview rating={product.rating} reviews={product.reviews.length} />
                   <StockStatus stock={product.stock} shippingInfo={product.shippingInformation}/>
-                </div>
+                </section>
               </div>
-              <Price product={product} />
+              <div className={styles.price}>
+                <Price product={product} />
+              </div>
             </article>
           </Link>
         </li>
