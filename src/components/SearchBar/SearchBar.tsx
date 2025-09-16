@@ -1,22 +1,39 @@
-import Form from "next/form";
+"use client";
+
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 import styles from "./SearchBar.module.css";
 
 export default function SearchBar() {
+  const [search, setSearch] = useState("");
+  const router = useRouter();
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const trimmedSearch = search.trim();
+    if (trimmedSearch) {
+      router.push(`/products?search=${encodeURIComponent(trimmedSearch)}`);
+    } else {
+      router.push(`/products`);
+    }
+  };
+
   return (
-    <Form action="/search-results/" className={styles.searchBar}>
+    <form onSubmit={handleSubmit} className={styles.searchBar}>
       <label htmlFor="search" className={styles.hidden}>
-        Search
+        Search products
       </label>
       <input
-        name="query"
         id="search"
         type="text"
-        placeholder="Search..."
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        placeholder="Search products..."
         className={styles.input}
       />
-      <button className={styles.button} type="submit">
-        Go
+      <button type="submit" className={styles.button}>
+        Search
       </button>
-    </Form>
+    </form>
   );
 }
