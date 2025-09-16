@@ -69,6 +69,10 @@
   border-radius: 0.5rem;
 }
 
+.images{
+  display: flex;
+}
+
 .image {
   flex-shrink: 0;
 
@@ -94,6 +98,10 @@
     height: 600px;
   }
 
+  .image{
+    margin-bottom: auto;
+  }
+
   .cirkel {
     width: 100px;
     height: 100px;
@@ -106,9 +114,19 @@
   .center {
     gap: 2rem;
   }
+
+  .center h1{
+    text-align: center;
+  }
   
   :global(.swiper) {
     max-width: 750px;
+  }
+}
+
+@media (max-width: 900px) {
+  :global(.swiper) {
+    max-width: 600px;
   }
 }
 
@@ -123,6 +141,6 @@
   }
 
   .image {
-    max-width: 200px;
+    max-width: 150px;
   }
 }
