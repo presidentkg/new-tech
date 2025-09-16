@@ -7,9 +7,6 @@ export default function About() {
         <section className={styles['bg-image']}>
           <div className={styles['bg-inner']}>
             <h1 className={styles['h1-heading']}>About</h1>
-            {/* <p className={styles.paragraph}>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore itaque, vero dolorem numquam quos iure iste impedit velit porro dignissimos eaque reprehenderit aliquid voluptatem, quisquam amet, iusto voluptate molestiae quibusdam?
-            </p> */}
           </div>
         </section>
         <section className={styles['inner-container']}>

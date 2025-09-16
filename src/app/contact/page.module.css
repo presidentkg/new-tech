@@ -4,14 +4,17 @@
     gap: 2rem;
     padding: 2rem 1rem;
     
+    /* Anpassning för små skärmar (mobiler i landskapsläge och mindre surfplattor */
     @media (min-width: 576px) {
         padding-inline: 4rem;
     }
 
+    /* Anpassning för surfplattor */
     @media (min-width: 768px) {
         padding-inline: 8rem;
     }
 
+    /* Anpassning för desktops och större skärmar */
     @media (min-width: 992px) {
         grid-template-columns: 1fr 1fr;
         padding-inline: 0;
@@ -19,6 +22,7 @@
         margin-inline: auto;
     }
     
+    /* Anpassning för stora desktops */
     @media (min-width: 1200px) {
         max-width: 960px;
     }
@@ -28,10 +32,12 @@
     display: flex;
     flex-direction: column;
     
+    /* Anpassning för desktops och större skärmar */
     @media (min-width: 992px) {
         padding-right: 2rem;
     }
     
+    /* Anpassning för stora desktops */
     @media (min-width: 1200px) {
         padding-right: 5rem;
     }
@@ -40,6 +46,7 @@
 .h1-heading {
     margin-bottom: 0.5rem;
     
+    /* Anpassning för stora desktops */
     @media (min-width: 1200px) {
         margin-bottom: 1rem;
     }
@@ -48,6 +55,7 @@
 .paragraph {
     margin-bottom: 1.5rem;
     
+    /* Anpassning för stora desktops */
     @media (min-width: 1200px) {
         margin-bottom: 2.7rem;
     }
@@ -66,6 +74,7 @@
     flex-direction: column;
     gap: 1.3rem;
 
+    /* Anpassning för stora desktops */
     @media (min-width: 1200px) {
         gap: 1.5rem;
     }
@@ -91,7 +100,6 @@
 }
 
 .button {
-    /* margin-top: 1rem; */
     padding: 0.8em 1.4em;
     border-radius: 0.6em;
     border: 0;
@@ -112,6 +120,7 @@
     box-shadow: 2px 4px 8px 0 rgba(147, 139, 171, 0.2);
     display: none;
 
+    /* Anpassning för desktops och större skärmar */
     @media (min-width: 992px) {
         display: block;
     }   
