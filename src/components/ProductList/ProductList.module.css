@@ -59,6 +59,7 @@
 
 .price {
  margin-top: 0.5rem;
+ margin-left: auto;
 }
 
 @media (min-width: 600px) {
