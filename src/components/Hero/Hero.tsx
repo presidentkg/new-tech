@@ -29,7 +29,7 @@ export default function Hero() {
                         <div className={styles.image}>
                             <Image
                                 src="/images/laptop.webp"
-                                alt={"laptop image"}
+                                alt={"Laptop image"}
                                 width={150}
                                 height={150}
                             />
@@ -50,7 +50,7 @@ export default function Hero() {
                             <div className={styles.image}>
                                 <Image
                                     src="/images/phone.webp"
-                                    alt={"laptop image"}
+                                    alt={"Phone image"}
                                     width={150}
                                     height={150}
                                 />
@@ -58,7 +58,7 @@ export default function Hero() {
                             <div className={styles.image}>
                                 <Image
                                     src="/images/phone2.webp"
-                                    alt={"laptop image"}
+                                    alt={"Phone image"}
                                     width={150}
                                     height={150}
                                 />
@@ -66,7 +66,7 @@ export default function Hero() {
                         </div>
                         <div className={styles.center}>
                             <h1>Discover your new phone</h1>
-                            <HeroBtn btnText='See all phones' directions='products'/>
+                            <HeroBtn btnText='See all phones' directions='products?category=smartphones'/>
                         </div>
                     </section>
                 </SwiperSlide>
@@ -75,14 +75,14 @@ export default function Hero() {
                         <div className={styles.image}>
                             <Image
                                 src="/images/tablet.webp"
-                                alt={"laptop image"}
+                                alt={"Tablet image"}
                                 width={150}
                                 height={150}
                             />
                         </div>
                         <div className={styles.center}>
                             <h1>Looking for a new tablet?</h1>
-                            <HeroBtn btnText='See all tablets' directions='products'/>
+                            <HeroBtn btnText='See all tablets' directions='products?category=tablets'/>
                         </div>
                     </section>
                 </SwiperSlide>

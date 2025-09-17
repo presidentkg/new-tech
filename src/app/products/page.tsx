@@ -3,6 +3,7 @@ import { Product } from "@/lib/utils/interface";
 import styles from "./ProductsPage.module.css";
 import ProductFilter from "@/components/ProductFilter/ProductFilter";
 
+
 interface ProductsPageProps {
   searchParams: { category?: string; search?: string };
 }

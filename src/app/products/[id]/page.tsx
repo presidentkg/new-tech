@@ -60,7 +60,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
             reviews={product.reviews.length}
           />
 
-          <p className={styles.stock}>
+          <p className={`${styles.stock} ${product.stock > 0 ? styles.inStock : styles.outOfStock}`}>
             {product.stock > 0 ? "In stock" : "Out of stock"}
           </p>
           <div className={styles.details}>
