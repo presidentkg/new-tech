@@ -27,7 +27,6 @@ export default async function Home() {
         <Hero />
         <h1>Deal of the Week</h1>
         <ProductSwiper products = {featuredProducts} />
-        <ProductListWithPagination products={allProducts} />
       </main>
     </div>
   );

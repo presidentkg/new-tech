@@ -4,6 +4,7 @@ import Image from "next/image";
 import StockStatus from "../StockStatus/StockStatus";
 import Link from "next/link";
 import StarReview from "../StarReview/StarReviews";
+import Price from "../Price/Price";
 
 export default function ProductCard({product} : {product: Product}) {
     const originalPrice = (product.price / (1 - product.discountPercentage / 100)).toFixed(2);
@@ -24,14 +25,8 @@ export default function ProductCard({product} : {product: Product}) {
                 <p>{product.description}</p>
                 <StarReview rating={product.rating} reviews={product.reviews.length} />
             </section>
-            <footer className={styles.priceWrapper}>
-                <span className={styles.price}>{product.price} :-</span>
-                <div className={styles.pricingDetails}>
-                    <p className={styles.save}>Save {discount} :-</p>
-                    <span className={styles.originalPrice}>Original price: {originalPrice} :-</span> 
-                </div>
-            </footer>
-            <StockStatus stock={product.stock} />
+            <Price product={product} />
+            <StockStatus stock={product.stock} shippingInfo={product.shippingInformation} />
         </Link>
     )
 }
