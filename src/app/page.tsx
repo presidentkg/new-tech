@@ -1,7 +1,7 @@
 import styles from "./page.module.css";
 import Hero from "@/components/Hero/Hero";
 import { getProductsByCategory } from "@/lib/utils/utils";
-import ProductListWithPagination from "@/components/ProductListWithPagination/ProductListWithPagination";
+
 import ProductSwiper from "@/components/ProductSwiper/ProductSwiper";
 
 export default async function Home() {
@@ -9,12 +9,6 @@ export default async function Home() {
   const tablets = await getProductsByCategory("tablets");
   const laptops = await getProductsByCategory("laptops");
 
-  const allProducts = [
-    ...laptops,
-    ...smartphones,
-    ...tablets,
-  ];
-  
   const featuredProducts = [
   ...smartphones.slice(0, 5),
   ...tablets.slice(0, 5),

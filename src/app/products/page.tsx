@@ -1,7 +1,8 @@
 import { notFound } from "next/navigation";
 import { Product } from "@/lib/utils/interface";
 import styles from "./ProductsPage.module.css";
-import ProductListWithPagination from "@/components/ProductListWithPagination/ProductListWithPagination";
+import ProductFilter from "@/components/ProductFilter/ProductFilter";
+
 
 interface ProductsPageProps {
   searchParams: { category?: string; search?: string };
@@ -34,7 +35,7 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
           : "All Products"}
       </h1>
       {data.products.length > 0 ? (
-        <ProductListWithPagination products={data.products} />
+        <ProductFilter products={data.products} />
       ) : (
         <p>No products found.</p>
       )}

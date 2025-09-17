@@ -1,0 +1,27 @@
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.select {
+  padding: 0.4rem 0.6rem;
+  font-size: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+  transition: border 0.2s ease;
+}
+
+.select:focus {
+  outline: none;
+  border-color: #7b61ff; 
+  box-shadow: 0 0 0 2px rgba(123, 97, 255, 0.2);
+}
