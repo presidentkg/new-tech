@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Product } from "@/lib/utils/interface";
 import { ProductList } from "@/components/ProductList/ProductList";
+import PaginationButtons from "@/components/PaginationButtons/PaginationButtons";
 import styles from "./ProductFilter.module.css";
 
 interface ProductFilterProps {
@@ -11,7 +12,9 @@ interface ProductFilterProps {
 
 export default function ProductFilter({ products }: ProductFilterProps) {
   const [sortOption, setSortOption] = useState("default");
+  const [page, setPage] = useState(1);
 
+  const limit = 5;
   const sortedProducts = [...products].sort((a, b) => {
     switch (sortOption) {
       case "price-asc":
@@ -29,6 +32,15 @@ export default function ProductFilter({ products }: ProductFilterProps) {
     }
   });
 
+  const totalPages = Math.ceil(sortedProducts.length / limit);
+  const start = (page - 1) * limit;
+  const visibleProducts = sortedProducts.slice(start, start + limit);
+
+  const handleSortChange = (value: string) => {
+    setSortOption(value);
+    setPage(1);
+  };
+
   return (
     <div>
       <div className={styles.controls}>
@@ -38,7 +50,7 @@ export default function ProductFilter({ products }: ProductFilterProps) {
         <select
           id="sort"
           value={sortOption}
-          onChange={(e) => setSortOption(e.target.value)}
+          onChange={(e) => handleSortChange(e.target.value)}
           className={styles.select}
         >
           <option value="default">Default</option>
@@ -50,7 +62,15 @@ export default function ProductFilter({ products }: ProductFilterProps) {
         </select>
       </div>
 
-      <ProductList products={sortedProducts} />
+      <ProductList products={visibleProducts} />
+
+      {totalPages > 1 && (
+        <PaginationButtons
+          totalPages={totalPages}
+          currentPage={page}
+          setPage={setPage}
+        />
+      )}
     </div>
   );
 }
