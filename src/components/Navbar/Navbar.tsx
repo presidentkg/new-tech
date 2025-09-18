@@ -66,6 +66,7 @@ export default function Navbar() {
             <Link href="/cart" className={styles.navLink}>
               <FaCartShopping className={styles.icon} /> Cart
             </Link>
+            <div className={styles.badge}>1</div>
           </div>
         </div>
       </div>
