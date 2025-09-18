@@ -13,15 +13,6 @@
   scrollbar-color: rgba(134, 58, 175, 0.5) transparent;
 }
 
-.categories::-webkit-scrollbar {
-  height: 0.25rem;
-}
-
-.categories::-webkit-scrollbar-thumb {
-  background-color: rgba(134, 58, 175, 0.5);
-  border-radius: 0.125rem;
-}
-
 .category {
   display: flex;
   flex-direction: column;
