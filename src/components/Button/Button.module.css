@@ -51,3 +51,20 @@
   border: 1px solid #863AAF;
   font-weight: 700;
 }
+
+.addToCartButton {
+  background-color: #863AAF;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.addToCartButton:disabled {
+    background-color: #938BAB;
+    color: white;
+    cursor: not-allowed;
+}
