@@ -1,6 +1,7 @@
 .swiper {
   height: 700px;
   display: flex;
+  border-radius: 1rem;
 }
 
 @media (max-width: 550px) {
@@ -16,11 +17,13 @@
 .cardWrapper {
   flex-shrink: 0;
   width: 100%;
-  height: 100%;
+  height: 95%;
   position: relative;
   transition-property: transform;
   display: flex;
   justify-content: center;
   align-items: stretch;
-  padding-bottom: 2rem;
+  background-color: #ffffff;
+  border-radius: 1rem;
 }
+
