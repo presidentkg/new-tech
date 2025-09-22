@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import { CartItem as CartItemType } from "@/lib/utils/interface";
 import CartItem from './CartItem';
 import styles from './Cart.module.css';
-import Button from "../Button/Button";
 
 export default function Cart(){
     const [cartItems, setCartItems] = useState<CartItemType[]>([]);
@@ -45,13 +44,13 @@ export default function Cart(){
         <div className={styles.cart}>
             <section className={styles.items}>
                 <h1>Your cart</h1>
-                <div className={styles.cartGrid}>
+                <div className={`${styles.cartGrid} ${styles.categories}`}>
                     <p></p>
                     <p></p>
-                    <p className={styles.categories}>Amount</p>
-                    <p className={styles.categories}>Price</p>
-                    <p className={styles.categories}>Total price</p>
-                    <p className={styles.categories}>Remove</p>
+                    <p>Amount</p>
+                    <p>Price</p>
+                    <p>Total price</p>
+                    <p>Remove</p>
                 </div>
                 {cartItems.length > 0 ? (
                     cartItems.map((item : CartItemType) => (
@@ -67,21 +66,23 @@ export default function Cart(){
                 )}
             </section>
             <section className={styles.checkout}>
-                <div className={styles.priceWrapper}>
-                    <p>Subtotal:</p>
-                    <p>{totalOriginalPrice.toFixed(2)}</p>
+                <div className={styles.checkoutWrapper}>
+                    <div className={styles.priceWrapper}>
+                        <p>Subtotal:</p>
+                        <p>{totalOriginalPrice.toFixed(2)}</p>
+                    </div>
+                    <div className={styles.priceWrapper}>
+                        <p>Total discount:</p>
+                        <p>-{totalDiscount.toFixed(2)}</p>
+                    </div>
+                    <div className={`${styles.priceWrapper} ${styles.totalPrice}`}>
+                        <h2>Total:</h2>
+                        <h2>{totalPrice.toFixed(2)}</h2>
+                    </div>
+                    <button className={styles.btnCheckout}>
+                        Go to checkout
+                    </button>
                 </div>
-                <div className={styles.priceWrapper}>
-                    <p>Total discount:</p>
-                    <p>-{totalDiscount.toFixed(2)}</p>
-                </div>
-                <div className={`${styles.priceWrapper} ${styles.totalPrice}`}>
-                    <h2>Total:</h2>
-                    <h2>{totalPrice.toFixed(2)}</h2>
-                </div>
-                <button className={styles.btnCheckout}>
-                    Go to checkout
-                </button>
             </section>
         </div>
     )
