@@ -2,13 +2,7 @@
 
 import Link from "next/link";
 import styles from "./Navbar.module.css";
-import {
-  FaInfoCircle,
-  FaEnvelope,
-  FaTag,
-  FaUndo,
-  FaTruck,
-} from "react-icons/fa";
+import { FaInfoCircle, FaEnvelope } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
 import SearchBar from "../SearchBar/SearchBar";
 import Image from "next/image";
@@ -21,40 +15,24 @@ export default function Navbar() {
 
   return (
     <nav className={styles.navbar}>
-      <div className={styles.topBar}>
-        <ul>
-          <li>
-            <FaTag /> Price Match
-          </li>
-          <li>
-            <FaUndo /> Free Returns
-          </li>
-          <li>
-            <FaTruck /> Free Shipping For Members
-          </li>
-        </ul>
-      </div>
-
       <div className={styles.mainNav}>
-        <div className={styles.logoWrapper}>
-          <h1>
+        <div className={styles.group}>
+          <div className={styles.logoWrapper}>
             <Link href="/">
               <Image
                 src={Logo}
                 alt="NewTech Logo"
-                width={150}
-                height={40}
+                width={300}
+                height={60}
                 className={styles.logoImage}
               />
             </Link>
-          </h1>
-        </div>
+          </div>
 
-        <div className={styles.searchWrapper}>
-          <SearchBar />
-        </div>
+          <div className={styles.searchWrapper}>
+            <SearchBar />
+          </div>
 
-        <div className={styles.navActions}>
           <ul className={styles.navLinks}>
             <li>
               <Link href="/about" className={styles.navLink}>
@@ -66,16 +44,16 @@ export default function Navbar() {
                 <FaEnvelope className={styles.icon} /> Contact
               </Link>
             </li>
-          </ul>
 
-          <div className={styles.cart}>
-            <Link href="/cart" className={styles.navLink}>
-              <FaCartShopping className={styles.icon} /> Cart
-            </Link>
-            {totalQuantity > 0 && (
-              <div className={styles.badge}>{totalQuantity}</div>
-            )}
-          </div>
+            <li className={styles.cart}>
+              <Link href="/cart" className={styles.navLink}>
+                <FaCartShopping className={styles.icon} /> Cart
+              </Link>
+              {totalQuantity > 0 && (
+                <div className={styles.badge}>{totalQuantity}</div>
+              )}
+            </li>
+          </ul>
         </div>
       </div>
     </nav>
