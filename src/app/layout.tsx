@@ -31,12 +31,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <CartProvider>
-          <Navbar />
-          <CategorySelector />
-          {children}
-        </CartProvider>
-        <Footer />
+        <div className="pageWrapper">
+          <CartProvider>
+            <Navbar />
+            <CategorySelector />
+            {children}
+          </CartProvider>
+          <Footer />
+        </div>
       </body>
     </html>
   );
