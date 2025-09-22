@@ -1,11 +1,13 @@
 "use client"
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { CartContext } from "@/app/cart-provider";
 import { CartItem as CartItemType } from "@/lib/utils/interface";
 import CartItem from './CartItem';
 import styles from './Cart.module.css';
 
 export default function Cart(){
     const [cartItems, setCartItems] = useState<CartItemType[]>([]);
+    const { setCart } = useContext(CartContext);
 
     useEffect(() => {
         const storedCart = localStorage.getItem("cart");
@@ -31,12 +33,14 @@ export default function Cart(){
         })
         setCartItems(updatedCart)
         localStorage.setItem("cart", JSON.stringify(updatedCart));
+        setCart(updatedCart)
     };
 
     const handleRemoveItem = (id : number) => {
         const updatedCart = cartItems.filter(item => item.id !== id);
         setCartItems(updatedCart)
         localStorage.setItem("cart", JSON.stringify(updatedCart));
+        setCart(updatedCart)
     }
 
 
