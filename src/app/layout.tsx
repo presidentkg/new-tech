@@ -6,6 +6,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import CategorySelector from "@/components/CategorySelector/CategorySelector";
 import Footer from "@/components/Footer/Footer";
+import CartProvider from "./cart-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,9 +32,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <div className="pageWrapper">
-          <Navbar />
-          <CategorySelector />
-          {children}
+          <CartProvider>
+            <Navbar />
+            <CategorySelector />
+            {children}
+          </CartProvider>
           <Footer />
         </div>
       </body>

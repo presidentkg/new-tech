@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import styles from "./Navbar.module.css";
 import { FaInfoCircle, FaEnvelope } from "react-icons/fa";
@@ -5,8 +7,12 @@ import { FaCartShopping } from "react-icons/fa6";
 import SearchBar from "../SearchBar/SearchBar";
 import Image from "next/image";
 import Logo from "../../../public/NewTech-Logo.svg";
+import { useContext } from "react";
+import { CartContext } from "@/app/cart-provider";
 
 export default function Navbar() {
+  const { totalQuantity } = useContext(CartContext);
+
   return (
     <nav className={styles.navbar}>
       <div className={styles.mainNav}>
@@ -38,10 +44,14 @@ export default function Navbar() {
                 <FaEnvelope className={styles.icon} /> Contact
               </Link>
             </li>
-            <li>
+
+            <li className={styles.cart}>
               <Link href="/cart" className={styles.navLink}>
                 <FaCartShopping className={styles.icon} /> Cart
               </Link>
+              {totalQuantity > 0 && (
+                <div className={styles.badge}>{totalQuantity}</div>
+              )}
             </li>
           </ul>
         </div>
