@@ -19,7 +19,7 @@ export default async function Home() {
     <div className={styles.page}>
       <main className={styles.main}>
         <Hero />
-        <h1>Deal of the Week</h1>
+        <h2 className={styles.dealTitle}>Deal of the Week:</h2>
         <ProductSwiper products = {featuredProducts} />
       </main>
     </div>

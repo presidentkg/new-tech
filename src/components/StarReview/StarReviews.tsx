@@ -2,8 +2,7 @@
 
 import { FaStar, FaRegStar } from "react-icons/fa";
 import styles from "./StarReview.module.css";
-import { StarReviewProps } from "../../lib/utils/interface"
-
+import { StarReviewProps } from "../../lib/utils/interface";
 
 export default function StarReview({ rating, reviews }: StarReviewProps) {
   const filledStars = Math.round(rating);

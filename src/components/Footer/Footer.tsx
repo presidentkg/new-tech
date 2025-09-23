@@ -31,7 +31,7 @@ export default function Footer() {
           </li>
           <li>
             <Link href="/Admin" className={styles.navLink}>
-              <RiAdminFill  className={styles.icon} /> Admin
+              <RiAdminFill className={styles.icon} /> Admin
             </Link>
           </li>
           <li>
@@ -45,8 +45,8 @@ export default function Footer() {
                 width={150}
                 height={40}
                 className={styles.iconImage}
-              />{" "}
-              Github repo
+              />
+              <span>GitHub Repository</span>
             </Link>
           </li>
         </ul>
