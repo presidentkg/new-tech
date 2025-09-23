@@ -7,12 +7,22 @@ import Link from "next/link";
 import StarReview from "../StarReview/StarReviews";
 import StockStatus from "../StockStatus/StockStatus";
 import Price from "../Price/Price";
+import { deleteProduct } from '@/app/actions/products';
 
 type ProductListProps = {
   products: Product[];
 };
 
 export function ProductList({ products }: ProductListProps) {
+  async function handleDelete(productId: number) {
+    const result = await deleteProduct(productId);
+    if (result.success) {
+      alert(`Deleted product: ${result.data.title} (ID: ${result.data.id})`);
+      } else {
+      alert(`Failed to delete product: ${result.message}`);
+    }
+  }
+
   return (
     <ul className={styles.productList}>
       {products.map((product) => (
@@ -42,6 +52,15 @@ export function ProductList({ products }: ProductListProps) {
               </div>
               <div className={styles.price}>
                 <Price product={product} />
+                <button className={styles.button} 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    handleDelete(product.id);
+                  }}
+                >
+                  Delete
+                </button>
               </div>
             </article>
           </Link>

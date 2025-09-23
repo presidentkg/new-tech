@@ -30,7 +30,7 @@ export default function Footer() {
             </Link>
           </li>
           <li>
-            <Link href="/Admin" className={styles.navLink}>
+            <Link href="/admin" className={styles.navLink}>
               <RiAdminFill  className={styles.icon} /> Admin
             </Link>
           </li>

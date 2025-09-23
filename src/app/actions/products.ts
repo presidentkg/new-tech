@@ -21,7 +21,6 @@ export async function deleteProduct(productId: number): Promise<DeleteProductRes
     const result = await response.json();
     return { success: true, message: `Product ${productId} deleted`, data: result };
   } catch (error: any) {
-    console.error('Failed to delete product:', error);
     return { success: false, message: error.message };
   }
 }
