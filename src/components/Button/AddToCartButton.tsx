@@ -26,9 +26,9 @@ export default function AddToCartButton({ product }: { product: Product }) {
                 alert(`You have added ${newCartItem.title} to the cart`);
             }
             localStorage.setItem("cart", JSON.stringify(currentCart));
-      setCart(currentCart);
-    } catch {
-      alert(`Could not add ${product.title} to the cart`);
+            setCart(currentCart);
+        } catch {
+            alert(`Could not add ${product.title} to the cart`);
         }        
     }
 
