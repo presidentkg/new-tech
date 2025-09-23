@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Logo from "../../../public/NewTech-Logo.svg";
 import { FaInfoCircle, FaEnvelope } from "react-icons/fa";
+import { RiAdminFill } from "react-icons/ri";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
@@ -26,6 +27,11 @@ export default function Footer() {
           <li>
             <Link href="/contact" className={styles.navLink}>
               <FaEnvelope className={styles.icon} /> Contact
+            </Link>
+          </li>
+          <li>
+            <Link href="/Admin" className={styles.navLink}>
+              <RiAdminFill  className={styles.icon} /> Admin
             </Link>
           </li>
           <li>

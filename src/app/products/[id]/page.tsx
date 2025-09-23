@@ -70,9 +70,6 @@ export default async function ProductPage({ params }: ProductPageProps) {
             <p>Estimated shipping: 2-5 days</p>
           </div>
           <AddToCartButton product={product}/>
-          {/* <Button>
-            Add to Cart
-          </Button> */}
         </div>
       </div>
     </div>
