@@ -11,9 +11,10 @@ import { deleteProduct } from '@/app/actions/products';
 
 type ProductListProps = {
   products: Product[];
+  isAdminPage?: boolean;
 };
 
-export function ProductList({ products }: ProductListProps) {
+export function ProductList({ products, isAdminPage = false }: ProductListProps) {
   async function handleDelete(productId: number) {
     const result = await deleteProduct(productId);
     if (result.success) {
@@ -52,15 +53,18 @@ export function ProductList({ products }: ProductListProps) {
               </div>
               <div className={styles.price}>
                 <Price product={product} />
-                <button className={styles.button} 
-                  onClick={(e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    handleDelete(product.id);
-                  }}
-                >
-                  Delete
-                </button>
+                {isAdminPage && (
+                  <button
+                    className={styles.button}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      handleDelete(product.id);
+                    }}
+                  >
+                    Delete
+                  </button>
+                )}
               </div>
             </article>
           </Link>

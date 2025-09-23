@@ -14,7 +14,7 @@ export default async function AdminPage() {
     <div className={styles.page}>
       <h1 className={styles.heading}>Admin Panel: Products</h1>
       {data.products.length > 0 ? (
-        <ProductList products={data.products} />
+        <ProductList products={data.products} isAdminPage={true} />
       ) : (
         <p>No products found.</p>
       )}
