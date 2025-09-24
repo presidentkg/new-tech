@@ -8,6 +8,7 @@ import StarReview from "../StarReview/StarReviews";
 import StockStatus from "../StockStatus/StockStatus";
 import Price from "../Price/Price";
 import { deleteProduct } from '@/app/actions/products';
+import { useRouter } from 'next/navigation';
 
 type ProductListProps = {
   products: Product[];
@@ -15,6 +16,8 @@ type ProductListProps = {
 };
 
 export function ProductList({ products, isAdminPage = false }: ProductListProps) {
+  const router = useRouter();
+
   async function handleDelete(productId: number) {
     const result = await deleteProduct(productId);
     if (result.success) {
@@ -61,9 +64,16 @@ export function ProductList({ products, isAdminPage = false }: ProductListProps)
                 <Price product={product} />
                 <div className={styles.buttons}>
                   {isAdminPage && (
-                    <Link href={`/admin/update/${product.id}`} className={`${styles.button} ${styles.update}`}>
+                    <button 
+                      className={`${styles.button} ${styles.update}`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        router.push(`/admin/update/${product.id}`);
+                      }}
+                    >
                       Update
-                    </Link>
+                    </button>
                   )}
                   {isAdminPage && (
                     <button
