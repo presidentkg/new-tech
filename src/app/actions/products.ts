@@ -1,5 +1,7 @@
 'use server';
 
+import { redirect } from "next/navigation";
+
 export type DeleteProductResult = {
   success: boolean;
   message: string;
@@ -23,4 +25,11 @@ export async function deleteProduct(productId: number): Promise<DeleteProductRes
   } catch (error: any) {
     return { success: false, message: error.message };
   }
+}
+
+export async function UpdateAction(formData : FormData) {
+  const title = formData.get("title");
+  const price = formData.get("price");
+  console.log(`New title: ${title}, New Price: ${price}`);
+  redirect('/admin');
 }
