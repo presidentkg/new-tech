@@ -45,8 +45,8 @@ export default function Footer() {
                 width={150}
                 height={40}
                 className={styles.iconImage}
-              />{" "}
-              Github repo
+              />
+              <span>GitHub Repository</span>
             </Link>
           </li>
         </ul>

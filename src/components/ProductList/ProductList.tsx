@@ -38,7 +38,7 @@ export function ProductList({ products, isAdminPage = false }: ProductListProps)
               <div className={styles.image}>
                 <Image
                   src={product.images[0]}
-                  alt={"product image"}
+                  alt={`${product.title} - ${product.description}`}
                   width={150}
                   height={150}
                 />
@@ -47,8 +47,14 @@ export function ProductList({ products, isAdminPage = false }: ProductListProps)
                 <section className={styles.details}>
                   <h3>{product.title}</h3>
                   <p>{product.description}</p>
-                  <StarReview rating={product.rating} reviews={product.reviews.length} />
-                  <StockStatus stock={product.stock} shippingInfo={product.shippingInformation}/>
+                  <StarReview
+                    rating={product.rating}
+                    reviews={product.reviews.length}
+                  />
+                  <StockStatus
+                    stock={product.stock}
+                    shippingInfo={product.shippingInformation}
+                  />
                 </section>
               </div>
               <div className={styles.price}>

@@ -39,10 +39,10 @@ export interface Product {
 }
 
 export interface StarReviewProps {
-  rating: number;  
-  reviews: number;  
+  rating: number;
+  reviews: number;
 }
 
 export interface CartItem extends Product {
-    quantity: number;
+  quantity: number;
 }
