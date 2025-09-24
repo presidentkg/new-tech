@@ -59,18 +59,25 @@ export function ProductList({ products, isAdminPage = false }: ProductListProps)
               </div>
               <div className={styles.price}>
                 <Price product={product} />
-                {isAdminPage && (
-                  <button
-                    className={styles.button}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      e.stopPropagation();
-                      handleDelete(product.id);
-                    }}
-                  >
-                    Delete
-                  </button>
-                )}
+                <div className={styles.buttons}>
+                  {isAdminPage && (
+                    <Link href={`/admin/update/${product.id}`} className={`${styles.button} ${styles.update}`}>
+                      Update
+                    </Link>
+                  )}
+                  {isAdminPage && (
+                    <button
+                      className={styles.button}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        handleDelete(product.id);
+                      }}
+                    >
+                      Delete
+                    </button>
+                  )}
+                </div>
               </div>
             </article>
           </Link>
