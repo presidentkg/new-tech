@@ -1,23 +1,29 @@
 import Form from "next/form";
-import styles from "./NewProductForm.module.css";
+import { addProduct } from "@/app/actions/products";
+import Button from "../Button/Button";
+import React from "react";
+import styles from "./AddProductForm.module.css";
 
-export default function NewProductForm() {
-  const formFields = {
-    id: "number",
-    title: "text",
-    description: "text",
-    price: "number",
-    stock: "number",
-    brand: "text",
-    category: "text",
-  };
+const formFields = {
+  id: "number",
+  title: "text",
+  description: "text",
+  price: "number",
+  brand: "text",
+  category: "text",
+};
 
-  const fieldNames = Object.keys(formFields);
+const fieldNames = Object.keys(formFields);
 
+type AddProductFormProps = {
+  onCancel: () => void;
+};
+
+export default function AddProductForm({ onCancel }: AddProductFormProps) {
   return (
     <section className={styles.container}>
       <h3>Add new product</h3>
-      <Form action="" className={styles.form}>
+      <Form action={addProduct} className={styles.form}>
         {fieldNames.map((fieldName) => {
           const fieldType = formFields[fieldName as keyof typeof formFields];
 
@@ -62,9 +68,10 @@ export default function NewProductForm() {
             </div>
           );
         })}
-        <button type="submit" className={styles.button}>
-          Add
-        </button>
+        <div className={styles.buttons}>
+          <Button onClick={onCancel}>Cancel</Button>
+          <Button type="submit">Add</Button>
+        </div>
       </Form>
     </section>
   );

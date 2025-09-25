@@ -16,7 +16,7 @@
 }
 
 .paginationButton {
-  background-color: #863AAF;
+  background-color: #863aaf;
   color: white;
   padding: 0.5rem 1rem;
   border: 1px solid transparent;
@@ -24,16 +24,14 @@
   font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s ease,
-              color 0.2s ease,
-              border-color 0.2s ease,
-              transform 0.1s ease;
+  transition: background-color 0.2s ease, color 0.2s ease,
+    border-color 0.2s ease, transform 0.1s ease;
 }
 
 .paginationButton:hover:not(:disabled) {
-  background-color: #ffffff; 
-  color: #863AAF;
-  border: 1px solid #863AAF; 
+  background-color: #ffffff;
+  color: #863aaf;
+  border: 1px solid #863aaf;
 }
 
 .paginationButton:active:not(:disabled) {
@@ -47,13 +45,13 @@
 
 .active {
   background-color: #ffffff;
-  color: #863AAF;
-  border: 1px solid #863AAF;
+  color: #863aaf;
+  border: 1px solid #863aaf;
   font-weight: 700;
 }
 
 .addToCartButton {
-  background-color: #863AAF;
+  background-color: #863aaf;
   color: white;
   padding: 0.5rem 1rem;
   border: 1px solid transparent;
@@ -64,7 +62,11 @@
 }
 
 .addToCartButton:disabled {
-    background-color: #938BAB;
-    color: white;
-    cursor: not-allowed;
+  background-color: #938bab;
+  color: white;
+  cursor: not-allowed;
+}
+
+.primary {
+  padding: 0.5rem;
 }
