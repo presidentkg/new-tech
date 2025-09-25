@@ -7,21 +7,84 @@ import Link from "next/link";
 import StarReview from "../StarReview/StarReviews";
 import StockStatus from "../StockStatus/StockStatus";
 import Price from "../Price/Price";
-import { deleteProduct } from '@/app/actions/products';
+import { deleteProduct } from "@/app/actions/products";
+import { useRouter } from "next/navigation";
 
 type ProductListProps = {
   products: Product[];
   isAdminPage?: boolean;
 };
 
-export function ProductList({ products, isAdminPage = false }: ProductListProps) {
+export function ProductList({
+  products,
+  isAdminPage = false,
+}: ProductListProps) {
+  const router = useRouter();
+
   async function handleDelete(productId: number) {
     const result = await deleteProduct(productId);
     if (result.success) {
       alert(`Deleted product: ${result.data.title} (ID: ${result.data.id})`);
-      } else {
+    } else {
       alert(`Failed to delete product: ${result.message}`);
     }
+  }
+  if (isAdminPage) {
+    return (
+      <table className={styles.adminTable}>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Rating</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {products.map((product) => (
+            <tr key={product.id}>
+              <td>{product.title}</td>
+              <td>
+                <Price product={product} />
+              </td>
+              <td>
+                <StockStatus
+                  stock={product.stock}
+                  shippingInfo={product.shippingInformation}
+                />
+              </td>
+              <td>
+                <StarReview
+                  rating={product.rating}
+                  reviews={product.reviews.length}
+                />
+              </td>
+              <td>
+                <div className={styles.buttonGroup}>
+                  <button
+                    className={`${styles.button} ${styles.delete}`}
+                    onClick={() => handleDelete(product.id)}
+                  >
+                    Delete
+                  </button>
+                  <button
+                    className={`${styles.button} ${styles.update}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      router.push(`/admin/update/${product.id}`);
+                    }}
+                  >
+                    Update
+                  </button>
+                </div>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    );
   }
 
   return (
@@ -59,18 +122,6 @@ export function ProductList({ products, isAdminPage = false }: ProductListProps)
               </div>
               <div className={styles.price}>
                 <Price product={product} />
-                {isAdminPage && (
-                  <button
-                    className={styles.button}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      e.stopPropagation();
-                      handleDelete(product.id);
-                    }}
-                  >
-                    Delete
-                  </button>
-                )}
               </div>
             </article>
           </Link>

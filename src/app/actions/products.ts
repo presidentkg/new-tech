@@ -34,6 +34,7 @@ export async function deleteProduct(
   }
 }
 
+
 export async function addProduct(formData: FormData) {
   const id = formData.get("id") as string;
   const title = formData.get("title") as string;
@@ -52,4 +53,10 @@ export async function addProduct(formData: FormData) {
   };
 
   console.log(addedProduct);
+}
+
+export async function UpdateAction(prevState : any, formData : FormData) {
+  const title = formData.get("title");
+  const price = formData.get("price");
+  return { message: `New title: ${title}, New Price: ${price}` }
 }
