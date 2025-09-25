@@ -7,15 +7,18 @@ import Link from "next/link";
 import StarReview from "../StarReview/StarReviews";
 import StockStatus from "../StockStatus/StockStatus";
 import Price from "../Price/Price";
-import { deleteProduct } from '@/app/actions/products';
-import { useRouter } from 'next/navigation';
+import { deleteProduct } from "@/app/actions/products";
+import { useRouter } from "next/navigation";
 
 type ProductListProps = {
   products: Product[];
   isAdminPage?: boolean;
 };
 
-export function ProductList({ products, isAdminPage = false }: ProductListProps) {
+export function ProductList({
+  products,
+  isAdminPage = false,
+}: ProductListProps) {
   const router = useRouter();
 
   async function handleDelete(productId: number) {
@@ -58,12 +61,24 @@ export function ProductList({ products, isAdminPage = false }: ProductListProps)
                 />
               </td>
               <td>
-                <button
-                  className={styles.button}
-                  onClick={() => handleDelete(product.id)}
-                >
-                  Delete
-                </button>
+                <div className={styles.buttonGroup}>
+                  <button
+                    className={`${styles.button} ${styles.delete}`}
+                    onClick={() => handleDelete(product.id)}
+                  >
+                    Delete
+                  </button>
+                  <button
+                    className={`${styles.button} ${styles.update}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      router.push(`/admin/update/${product.id}`);
+                    }}
+                  >
+                    Update
+                  </button>
+                </div>
               </td>
             </tr>
           ))}
@@ -107,32 +122,6 @@ export function ProductList({ products, isAdminPage = false }: ProductListProps)
               </div>
               <div className={styles.price}>
                 <Price product={product} />
-                <div className={styles.buttons}>
-                  {isAdminPage && (
-                    <button 
-                      className={`${styles.button} ${styles.update}`}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        router.push(`/admin/update/${product.id}`);
-                      }}
-                    >
-                      Update
-                    </button>
-                  )}
-                  {isAdminPage && (
-                    <button
-                      className={styles.button}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        handleDelete(product.id);
-                      }}
-                    >
-                      Delete
-                    </button>
-                  )}
-                </div>
               </div>
             </article>
           </Link>
