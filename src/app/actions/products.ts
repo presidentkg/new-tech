@@ -24,3 +24,9 @@ export async function deleteProduct(productId: number): Promise<DeleteProductRes
     return { success: false, message: error.message };
   }
 }
+
+export async function UpdateAction(prevState : any, formData : FormData) {
+  const title = formData.get("title");
+  const price = formData.get("price");
+  return { message: `New title: ${title}, New Price: ${price}` }
+}

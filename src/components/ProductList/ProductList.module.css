@@ -65,6 +65,11 @@
   margin-left: auto;
 }
 
+.buttons{
+  display: flex;
+  gap: 0.5rem;
+}
+
 .button {
   align-self: flex-end;
   background-color: #dd2410;
@@ -80,6 +85,15 @@
     background-color: #fd2a12;
   }
 } 
+
+.update {
+  background-color: #FFDD00;
+  color: black;
+
+  &:hover {
+    background-color: #FFE65E;
+  }
+}
 
 @media (min-width: 600px) {
   .image {
