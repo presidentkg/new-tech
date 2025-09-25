@@ -29,7 +29,7 @@ export default function UpdateForm({product} : {product : Product}){
                 />
             </div>
             <div className={styles.buttons}>
-                <button type="submit" className={styles.button}>Spara</button>
+                <button type="submit" className={styles.button}>Save</button>
                 <Link
                     className={`${styles.button} ${styles.cancel}`}
                     href="/admin"
