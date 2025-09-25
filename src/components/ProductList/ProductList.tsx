@@ -7,17 +7,17 @@ import Link from "next/link";
 import StarReview from "../StarReview/StarReviews";
 import StockStatus from "../StockStatus/StockStatus";
 import Price from "../Price/Price";
-import { deleteProduct } from "@/app/actions/products";
+import { deleteProduct } from '@/app/actions/products';
+import { useRouter } from 'next/navigation';
 
 type ProductListProps = {
   products: Product[];
   isAdminPage?: boolean;
 };
 
-export function ProductList({
-  products,
-  isAdminPage = false,
-}: ProductListProps) {
+export function ProductList({ products, isAdminPage = false }: ProductListProps) {
+  const router = useRouter();
+
   async function handleDelete(productId: number) {
     const result = await deleteProduct(productId);
     if (result.success) {
@@ -107,18 +107,32 @@ export function ProductList({
               </div>
               <div className={styles.price}>
                 <Price product={product} />
-                {isAdminPage && (
-                  <button
-                    className={styles.button}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      e.stopPropagation();
-                      handleDelete(product.id);
-                    }}
-                  >
-                    Delete
-                  </button>
-                )}
+                <div className={styles.buttons}>
+                  {isAdminPage && (
+                    <button 
+                      className={`${styles.button} ${styles.update}`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        router.push(`/admin/update/${product.id}`);
+                      }}
+                    >
+                      Update
+                    </button>
+                  )}
+                  {isAdminPage && (
+                    <button
+                      className={styles.button}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        handleDelete(product.id);
+                      }}
+                    >
+                      Delete
+                    </button>
+                  )}
+                </div>
               </div>
             </article>
           </Link>
