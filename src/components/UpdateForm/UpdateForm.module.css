@@ -51,6 +51,12 @@
     &:hover {
         background-color: #28a745;
     }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        pointer-events: none;
+        }
 }
 
 .cancel{
