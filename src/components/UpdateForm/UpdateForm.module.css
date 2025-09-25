@@ -65,3 +65,10 @@
         background-color: #fd2a12;
     }
 }
+
+@media (max-width: 500px) {
+    .updateForm{
+        max-width: 80%;
+        padding: 0.5rem;
+    }
+}

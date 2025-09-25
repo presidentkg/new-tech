@@ -15,7 +15,7 @@
   flex-direction: column;
   padding: 1rem;
   gap: 1rem;
-  border: 2px solid hsl(279, 30%, 80%);
+  border: 0.125rem solid hsl(279, 30%, 80%);
   border-radius: 0.5rem;
   position: relative;
 }
@@ -32,7 +32,7 @@
   border-radius: 0.25rem;
   z-index: 2;
   transform: rotate(-10deg);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0.125rem 0.375rem rgba(0, 0, 0, 0.3);
 }
 
 .image {
@@ -75,7 +75,7 @@
 .button {
   padding: 0.4rem 0.8rem;
   border: none;
-  border-radius: 4px;
+  border-radius: 0.25rem;
   cursor: pointer;
   font-size: 0.85rem;
   font-weight: 600;
@@ -131,7 +131,7 @@
 
 .adminTable th,
 .adminTable td {
-  border: 1px solid #ddd;
+  border: 0.0625rem solid #ddd;
   padding: 0.75rem 1rem;
   text-align: left;
 }
@@ -154,7 +154,7 @@
   background-color: #e53e3e;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 0.25rem;
   cursor: pointer;
   font-size: 0.85rem;
   transition: background-color 0.2s;
@@ -162,4 +162,40 @@
 
 .button:hover {
   background-color: #c53030;
+}
+
+@media (max-width: 1100px) {
+  .adminTable,
+  .adminTable tbody {
+      display: block;
+      width: 100%;
+  }
+
+  .adminTable thead {
+    display: none;
+  }
+
+  .adminTable tr,
+  .adminTable td {
+    display: block;
+    padding: 0;
+    text-align: left;
+    white-space: normal;
+  }
+
+  .adminTable tr {
+    border-bottom: 0.0625rem solid #eee;
+    padding-bottom: 0.6875rem;
+    margin-bottom: 0.6875;
+  }
+
+  .adminTable td {
+    border: none;
+    margin-bottom: 0.375rem;
+    padding: 0.3rem;
+  }
+
+  .adminTable tr:nth-child(even) {
+    background-color: white;
+  }
 }
