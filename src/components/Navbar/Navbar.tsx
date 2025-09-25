@@ -54,6 +54,7 @@ export default function Navbar() {
               )}
             </li>
           </ul>
+          <button className={styles.hamburgerButton}></button>
         </div>
       </div>
     </nav>

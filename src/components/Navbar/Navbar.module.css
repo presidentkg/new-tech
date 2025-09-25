@@ -45,8 +45,12 @@
 .searchWrapper {
   flex: 1 1 auto;
   min-width: 0;
-  display: flex;
+  display: none;
   justify-content: center;
+
+  @media (min-width: 768px) {
+    display: flex;
+  }
 }
 
 .searchWrapper input[type="search"] {
@@ -66,11 +70,15 @@
 }
 
 .navLinks {
-  display: flex;
+  display: none;
   gap: 1.5rem;
   list-style: none;
   margin: 0;
   padding: 0;
+
+  @media (min-width: 992px) {
+    display: flex;
+  }
 }
 
 .navLink {
@@ -104,10 +112,40 @@
   transform: scale(1.1);
 }
 
-@media (max-width: 768px) {
+.hamburgerButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 35px;
+  height: 27px;
+  position: relative;
+  border-top: 3px solid #863aaf;
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+  }
+  
+  &::before {
+    top: 9px;
+    border-top: 3px solid #863aaf;
+  }
+  
+  &::after {
+    top: 21px;
+    border-top: 3px solid #863aaf;
+  }
+
+  @media (min-width: 992px) {
+    display: none;
+  } 
+} 
+
+@media (max-width: 767px) {
   .group {
     flex-wrap: wrap;
-    justify-content: center;
     gap: 0.625rem;
   }
 
