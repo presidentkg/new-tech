@@ -22,9 +22,54 @@ export function ProductList({ products, isAdminPage = false }: ProductListProps)
     const result = await deleteProduct(productId);
     if (result.success) {
       alert(`Deleted product: ${result.data.title} (ID: ${result.data.id})`);
-      } else {
+    } else {
       alert(`Failed to delete product: ${result.message}`);
     }
+  }
+  if (isAdminPage) {
+    return (
+      <table className={styles.adminTable}>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Rating</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {products.map((product) => (
+            <tr key={product.id}>
+              <td>{product.title}</td>
+              <td>
+                <Price product={product} />
+              </td>
+              <td>
+                <StockStatus
+                  stock={product.stock}
+                  shippingInfo={product.shippingInformation}
+                />
+              </td>
+              <td>
+                <StarReview
+                  rating={product.rating}
+                  reviews={product.reviews.length}
+                />
+              </td>
+              <td>
+                <button
+                  className={styles.button}
+                  onClick={() => handleDelete(product.id)}
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    );
   }
 
   return (
