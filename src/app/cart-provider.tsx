@@ -2,7 +2,7 @@
 
 import { CartItem } from "@/lib/utils/interface";
 import { CartContextType } from "@/lib/utils/types";
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const CartContext = createContext<CartContextType>({
   cart: [],
@@ -10,16 +10,16 @@ export const CartContext = createContext<CartContextType>({
   setCart: () => {},
 });
 
-const currentCart: CartItem[] = JSON.parse(
-  localStorage.getItem("cart") || "[]"
-);
-
 export default function CartProvider({
   children,
 }: {
   children: React.ReactNode;
-}) {
-  const [cart, setCart] = useState<CartItem[]>(currentCart);
+}) { 
+  const [cart, setCart] = useState<CartItem[]>([]);
+  
+  useEffect(() => {
+    setCart(JSON.parse(localStorage.getItem("cart") || "[]"));
+  }, []);
 
   const totalQuantity = cart.reduce(
     (total, product) => total + (product.quantity || 0),
