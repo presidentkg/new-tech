@@ -18,7 +18,7 @@ export default function UpdateForm({product} : {product : Product}){
             alert(`Old title: ${product.title}, Old price: ${product.price}\n${state.message}`);
             router.push("/admin");
         }
-    }, [state.message]);
+    }, [state.message, product.title, product.price, router]);
   
     return(
         <Form action={formAction} className={styles.updateForm}>

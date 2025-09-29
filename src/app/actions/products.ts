@@ -1,9 +1,10 @@
 "use server";
 
+import { FormStatus } from "react-dom";
+
 export type DeleteProductResult = {
   success: boolean;
   message: string;
-  data?: any;
 };
 
 export async function deleteProduct(
@@ -11,29 +12,22 @@ export async function deleteProduct(
 ): Promise<DeleteProductResult> {
   if (!productId) throw new Error("Product ID is required");
 
-  try {
-    const response = await fetch(
-      `https://dummyjson.com/products/${productId}`,
-      {
-        method: "DELETE",
-      }
-    );
+  const response = await fetch(`https://dummyjson.com/products/${productId}`, {
+    method: "DELETE",
+  });
 
-    if (!response.ok) {
-      throw new Error(`Failed to delete product: ${response.statusText}`);
-    }
-
-    const result = await response.json();
-    return {
-      success: true,
-      message: `Product ${productId} deleted`,
-      data: result,
-    };
-  } catch (error: any) {
-    return { success: false, message: error.message };
+  if (!response.ok) {
+    return { success: false, message: "Failed to delete product." };
   }
-}
 
+  const data = await response.json();
+
+  if (!data?.success) {
+    return { success: false, message: "Invalid data" };
+  }
+
+  return { success: true, message: "Product deleted." };
+}
 
 export async function addProduct(formData: FormData) {
   const id = formData.get("id") as string;
@@ -55,8 +49,11 @@ export async function addProduct(formData: FormData) {
   console.log(addedProduct);
 }
 
-export async function UpdateAction(prevState : any, formData : FormData) {
+export async function UpdateAction(
+  prevState:{ message: string; },
+  formData: FormData
+) {
   const title = formData.get("title");
   const price = formData.get("price");
-  return { message: `New title: ${title}, New Price: ${price}` }
+  return { message: `New title: ${title}, New Price: ${price}` };
 }
