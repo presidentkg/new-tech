@@ -13,7 +13,7 @@ This is a school project built with **Next.js** using data from the [DummyJSON A
 ## Tech Stack
 
 * Next.js
-* CSS Modules / TailwindCSS
+* CSS Modules
 * DummyJSON API
 * Deployed on Vercel
 
