@@ -21,10 +21,10 @@ export function ProductList({
 }: ProductListProps) {
   const router = useRouter();
 
-  async function handleDelete(productId: number) {
-    const result = await deleteProduct(productId);
+  async function handleDelete(product: Product) {
+    const result = await deleteProduct(product.id);
     if (result.success) {
-      alert(`Deleted product: ${result.data.title} (ID: ${result.data.id})`);
+      alert(`Deleted product: ${product.title} (ID: ${product.id})`);
     } else {
       alert(`Failed to delete product: ${result.message}`);
     }
@@ -64,7 +64,7 @@ export function ProductList({
                 <div className={styles.buttonGroup}>
                   <button
                     className={`${styles.button} ${styles.delete}`}
-                    onClick={() => handleDelete(product.id)}
+                    onClick={() => handleDelete(product)}
                   >
                     Delete
                   </button>
