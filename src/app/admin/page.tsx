@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { Product } from "@/lib/utils/interface";
 import { ProductList } from "@/components/ProductList/ProductList";
+import FormWrapper from "@/components/AddProductForm/FormWrapper";
 import styles from "./AdminPage.module.css";
 
 export default async function AdminPage() {
@@ -12,6 +13,7 @@ export default async function AdminPage() {
 
   return (
     <div className={styles.page}>
+      <FormWrapper />
       <h1 className={styles.heading}>Admin Panel: Products</h1>
       {data.products.length > 0 ? (
         <ProductList products={data.products} isAdminPage={true} />
