@@ -1,7 +1,5 @@
 "use server";
 
-import { FormStatus } from "react-dom";
-
 export type DeleteProductResult = {
   success: boolean;
   message: string;
