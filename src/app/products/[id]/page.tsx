@@ -3,7 +3,7 @@ import Image from "next/image";
 import styles from "./Page.module.css";
 import StarReview from "@/components/StarReview/StarReviews";
 import PriceTag from "@/components/PriceTag/PriceTag";
-import Button from "@/components/Button/Button";
+import AddToCartButton from "@/components/Button/AddToCartButton";
 
 interface ProductPageProps {
   params: { id: string };
@@ -68,9 +68,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
             <p>{product.description}</p>
             <p>Estimated shipping: 2-5 days</p>
           </div>
-          <Button>
-            Add to Cart
-          </Button>
+          <AddToCartButton product={product}/>
         </div>
       </div>
     </div>

@@ -36,18 +36,20 @@ export default function PaginationButtons({
       </button>
 
       <ol className={styles.pageList}>
-        {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNumber) => (
-          <li key={pageNumber}>
-            <button
-              onClick={() => goToPage(pageNumber)}
-              className={`${styles.paginationButton} ${
-                pageNumber === currentPage ? styles.active : ""
-              }`}
-            >
-              {pageNumber}
-            </button>
-          </li>
-        ))}
+        {Array.from({ length: totalPages }, (_, i) => i + 1).map(
+          (pageNumber) => (
+            <li key={pageNumber}>
+              <button
+                onClick={() => goToPage(pageNumber)}
+                className={`${styles.paginationButton} ${
+                  pageNumber === currentPage ? styles.active : ""
+                }`}
+              >
+                {pageNumber}
+              </button>
+            </li>
+          )
+        )}
       </ol>
 
       <button

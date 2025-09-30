@@ -1,3 +1,5 @@
+import { CartItem } from "./interface";
+
 export type Review = {
   rating: number;
   comment: string;
@@ -8,16 +10,8 @@ export type Review = {
 
 export type ProductCategory = "iphone" | "tablet" | "laptop";
 
-export interface Product {
-  id: number;
-  title: string;
-  description: string;
-  price: number;
-  discountPercentage: number;
-  rating: number;
-  stock: number;
-  brand: string;
-  category: string;
-  thumbnail: string;
-  images: string[];
-}
+export type CartContextType = {
+  cart: CartItem[];
+  totalQuantity: number;
+  setCart: (cart: CartItem[]) => void;
+};

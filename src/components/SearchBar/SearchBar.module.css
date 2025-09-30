@@ -1,33 +1,28 @@
 .searchBar {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
   width: 100%;
-  max-width: 800px;
+  max-width: 600px; 
   background-color: #f9f9f9;
   border: 2px solid #938bab;
-  border-radius: 0.2rem;
-  padding: 0.5rem 1rem;
+  border-radius: 25px; 
+  padding: 0.4rem 0.8rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  transition: border-color 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.hidden {
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
+.searchBar:focus-within {
+  border-color: #863aaf;
+  box-shadow: 0 0 0 2px rgba(134, 58, 175, 0.2);
 }
 
 .input {
-  flex: 1;
+  flex: 1; 
   border: none;
   outline: none;
   background: transparent;
   font-size: 1rem;
+  padding: 0.5rem;
 }
 
 .button {
@@ -36,12 +31,23 @@
   color: white;
   font-size: 0.9rem;
   font-weight: 500;
-  padding: 0.4rem 0.8rem;
-  border-radius: 0.4rem;
+  padding: 0.45rem 1rem;
+  border-radius: 20px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
 .button:hover {
   background-color: #938bab;
+  transform: scale(1.05);
+}
+
+.hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
 }

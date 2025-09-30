@@ -11,8 +11,7 @@
   align-items: center;
   justify-items: center;
   min-height: 100svh;
-  padding: 5rem;
-  gap: 4rem;
+  padding: 2rem;
   font-family: var(--font-geist-sans);
 }
 
@@ -67,10 +66,7 @@
   height: 48px;
   padding: 0 1.25rem;
   border: 1px solid transparent;
-  transition:
-    background 0.2s,
-    color 0.2s,
-    border-color 0.2s;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -105,6 +101,10 @@ a.secondary {
 
 .footer img {
   flex-shrink: 0;
+}
+
+.dealTitle {
+  font-size: 2.5rem;
 }
 
 /* Enable hover only on non-touch devices */

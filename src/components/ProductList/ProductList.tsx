@@ -7,12 +7,86 @@ import Link from "next/link";
 import StarReview from "../StarReview/StarReviews";
 import StockStatus from "../StockStatus/StockStatus";
 import Price from "../Price/Price";
+import { deleteProduct } from "@/app/actions/products";
+import { useRouter } from "next/navigation";
 
 type ProductListProps = {
   products: Product[];
+  isAdminPage?: boolean;
 };
 
-export function ProductList({ products }: ProductListProps) {
+export function ProductList({
+  products,
+  isAdminPage = false,
+}: ProductListProps) {
+  const router = useRouter();
+
+  async function handleDelete(product: Product) {
+    const result = await deleteProduct(product.id);
+    if (result.success) {
+      alert(`Deleted product: ${product.title} (ID: ${product.id})`);
+    } else {
+      alert(`Failed to delete product: ${result.message}`);
+    }
+  }
+  if (isAdminPage) {
+    return (
+      <table className={styles.adminTable}>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Rating</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {products.map((product) => (
+            <tr key={product.id}>
+              <td>{product.title}</td>
+              <td>
+                <Price product={product} />
+              </td>
+              <td>
+                <StockStatus
+                  stock={product.stock}
+                  shippingInfo={product.shippingInformation}
+                />
+              </td>
+              <td>
+                <StarReview
+                  rating={product.rating}
+                  reviews={product.reviews.length}
+                />
+              </td>
+              <td>
+                <div className={styles.buttonGroup}>
+                  <button
+                    className={`${styles.button} ${styles.delete}`}
+                    onClick={() => handleDelete(product)}
+                  >
+                    Delete
+                  </button>
+                  <button
+                    className={`${styles.button} ${styles.update}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      router.push(`/admin/update/${product.id}`);
+                    }}
+                  >
+                    Update
+                  </button>
+                </div>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    );
+  }
+
   return (
     <ul className={styles.productList}>
       {products.map((product) => (
@@ -27,7 +101,7 @@ export function ProductList({ products }: ProductListProps) {
               <div className={styles.image}>
                 <Image
                   src={product.images[0]}
-                  alt={"product image"}
+                  alt={`${product.title} - ${product.description}`}
                   width={150}
                   height={150}
                 />
@@ -36,8 +110,14 @@ export function ProductList({ products }: ProductListProps) {
                 <section className={styles.details}>
                   <h3>{product.title}</h3>
                   <p>{product.description}</p>
-                  <StarReview rating={product.rating} reviews={product.reviews.length} />
-                  <StockStatus stock={product.stock} shippingInfo={product.shippingInformation}/>
+                  <StarReview
+                    rating={product.rating}
+                    reviews={product.reviews.length}
+                  />
+                  <StockStatus
+                    stock={product.stock}
+                    shippingInfo={product.shippingInformation}
+                  />
                 </section>
               </div>
               <div className={styles.price}>

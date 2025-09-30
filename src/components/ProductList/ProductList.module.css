@@ -15,16 +15,16 @@
   flex-direction: column;
   padding: 1rem;
   gap: 1rem;
-  border: 2px solid hsl(279, 30%, 80%);
+  border: 0.125rem solid hsl(279, 30%, 80%);
   border-radius: 0.5rem;
   position: relative;
 }
 
 .saleBadge {
   position: absolute;
-  top: 16px;
-  left: 16px;
-  background: #863AAF;
+  top: 1rem;
+  left: 1rem;
+  background: #863aaf;
   color: #fff;
   font-weight: bold;
   padding: 0.5rem 1rem;
@@ -32,7 +32,7 @@
   border-radius: 0.25rem;
   z-index: 2;
   transform: rotate(-10deg);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0.125rem 0.375rem rgba(0, 0, 0, 0.3);
 }
 
 .image {
@@ -58,8 +58,53 @@
 }
 
 .price {
- margin-top: 0.5rem;
- margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  margin-left: auto;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-start;
+  flex-wrap: no-wrap;
+}
+
+.button {
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: background-color 0.2s, transform 0.1s ease;
+}
+
+.button.delete {
+  background-color: #e53e3e;
+  color: white;
+}
+
+.button.delete:hover {
+  background-color: #c53030;
+  transform: translateY(-1px);
+}
+
+.button.update {
+  background-color: #3182ce;
+  color: white;
+}
+
+.button.update:hover {
+  background-color: #2b6cb0;
+  transform: translateY(-1px);
+}
+
+.button.update:active {
+  background-color: #2c5282;
+  transform: translateY(0);
 }
 
 @media (min-width: 600px) {
@@ -75,5 +120,82 @@
 @media (min-width: 1024px) {
   .detailsWrapper {
     flex-direction: row;
+  }
+}
+
+.adminTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.adminTable th,
+.adminTable td {
+  border: 0.0625rem solid #ddd;
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.adminTable th {
+  background-color: #f3f3f3;
+  font-weight: 600;
+}
+
+.adminTable tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.adminTable tr:hover {
+  background-color: #f0e6fa;
+}
+
+.button {
+  padding: 0.3rem 0.6rem;
+  background-color: #e53e3e;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background-color 0.2s;
+}
+
+.button:hover {
+  background-color: #c53030;
+}
+
+@media (max-width: 1100px) {
+  .adminTable,
+  .adminTable tbody {
+      display: block;
+      width: 100%;
+  }
+
+  .adminTable thead {
+    display: none;
+  }
+
+  .adminTable tr,
+  .adminTable td {
+    display: block;
+    padding: 0;
+    text-align: left;
+    white-space: normal;
+  }
+
+  .adminTable tr {
+    border-bottom: 0.0625rem solid #eee;
+    padding-bottom: 0.6875rem;
+    margin-bottom: 0.6875;
+  }
+
+  .adminTable td {
+    border: none;
+    margin-bottom: 0.375rem;
+    padding: 0.3rem;
+  }
+
+  .adminTable tr:nth-child(even) {
+    background-color: white;
   }
 }
