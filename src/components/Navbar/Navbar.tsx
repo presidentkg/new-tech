@@ -84,7 +84,7 @@ export default function Navbar() {
               <Link onClick={closeMobileMenu} href="/cart" className={styles.navLink}>
                 {!mobileMenuIsOpen && <FaCartShopping className={styles.icon} />}Cart
               </Link>
-              {totalQuantity > 0 && (
+              {!mobileMenuIsOpen && totalQuantity > 0 && (
                 <div className={styles.badge}>{totalQuantity}</div>
               )}
             </li>
