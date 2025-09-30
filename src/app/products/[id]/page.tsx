@@ -3,7 +3,6 @@ import Image from "next/image";
 import styles from "./Page.module.css";
 import StarReview from "@/components/StarReview/StarReviews";
 import PriceTag from "@/components/PriceTag/PriceTag";
-import Button from "@/components/Button/Button";
 import AddToCartButton from "@/components/Button/AddToCartButton";
 
 interface ProductPageProps {
