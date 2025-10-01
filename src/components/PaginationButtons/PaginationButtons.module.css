@@ -20,7 +20,7 @@
   background: white;
   color: #863aaf;
   padding: 0.3rem 0.7rem;
-  border-radius: 4px;
+  border-radius: 0.25rem;
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
   font-weight: 600;
