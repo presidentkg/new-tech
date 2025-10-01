@@ -45,8 +45,12 @@
 .searchWrapper {
   flex: 1 1 auto;
   min-width: 0;
-  display: flex;
+  display: none;
   justify-content: center;
+
+  @media (min-width: 768px) {
+    display: flex;
+  }
 }
 
 .searchWrapper input[type="search"] {
@@ -66,11 +70,15 @@
 }
 
 .navLinks {
-  display: flex;
+  display: none;
   gap: 1.5rem;
   list-style: none;
   margin: 0;
   padding: 0;
+
+  @media (min-width: 992px) {
+    display: flex;
+  }
 }
 
 .navLink {
@@ -104,10 +112,118 @@
   transform: scale(1.1);
 }
 
-@media (max-width: 768px) {
+.hamburgerButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 35px;
+  height: 27px;
+  position: relative;
+  border-top: 3px solid #863aaf;
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+  }
+  
+  &::before {
+    top: 9px;
+    border-top: 3px solid #863aaf;
+  }
+  
+  &::after {
+    top: 21px;
+    border-top: 3px solid #863aaf;
+  }
+
+  @media (min-width: 992px) {
+    display: none;
+  } 
+}
+
+.mobileMenu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100svh;
+  width: 40vw;
+  z-index: 1000;
+  padding: 2rem 2.25rem;
+  border-left: 1px #eee solid;
+  background-color: #fcfcfc;
+
+  @media (min-width: 992px) {
+    display: none;
+  }
+}
+
+.closeButtonContainer {
+  align-self: flex-end;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #863aaf;
+}
+
+.dropdownContainer {
+  margin-top: -0.5rem;
+}
+
+.dropdown {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.dropdownLink {
+  color: #000000;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.dropdownLink:hover {
+  color: #863aaf;
+  transform: translateY(-1px);
+}
+
+.dropdownButton {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #863aaf;
+  display: flex;
+  align-items: center;
+}
+
+.dropdownList {
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  > .navLink {
+    align-self: flex-start;
+    padding-left: 1rem;
+  }
+}
+
+@media (max-width: 767px) {
   .group {
     flex-wrap: wrap;
-    justify-content: center;
     gap: 0.625rem;
   }
 
