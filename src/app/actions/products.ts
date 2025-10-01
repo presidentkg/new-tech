@@ -20,7 +20,7 @@ export async function deleteProduct(
 
   const data = await response.json();
 
-  if (!data?.success) {
+  if (!data?.isDeleted) {
     return { success: false, message: "Invalid data" };
   }
 
