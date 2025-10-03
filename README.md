@@ -14,8 +14,8 @@ This project was carried out over 4 weeks by a group of four people. The goal wa
 - 📈 [Workflow](#-workflow)
 - 🗓 [Sprint Plan](#-sprint-plan)
 - 📚 [Lessons Learned](#-lessons-learned)
-- 🛠️ [My Contribution](#-my-contribution)
-- 💡 [Further development](#-further-development)
+- 🛠️ [My Contribution](#my-contribution)
+- 💡 [Further development](#further-development)
 - ✍️ [Contact](#-contact)
 
 
@@ -142,7 +142,7 @@ npm run dev
 * GitHub Projects
 
 ---
-### 🛠️ My Contribution
+## 🛠️ My Contribution
 
 * **Frontend & UI Development:**
     * Designed and implemented the **Hero section** and **Product Swiper** on the homepage.
