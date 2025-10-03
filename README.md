@@ -13,8 +13,9 @@ This project was carried out over 4 weeks by a group of four people. The goal wa
 - 📂 [Project Structure](#-project-structure)
 - 📈 [Workflow](#-workflow)
 - 🗓 [Sprint Plan](#-sprint-plan)
-- 🛠️ My Contribution
 - 📚 [Lessons Learned](#-lessons-learned)
+- 🛠️ My Contribution
+- 💡 Further development
 - ✍️ [Contact](#-contact)
 
 
@@ -52,7 +53,7 @@ The purpose was to practice:
 ## ⚙️ Installation
 ```bash
 # Clone the repository
-git clone https://github.com/Frawser/new-tech
+git clone https://github.com/presidentkg/new-tech
 
 # Navigate to the project directory
 cd new-tech
@@ -128,6 +129,19 @@ npm run dev
 * Presented the results
 
 ---
+
+## 📚 Lessons Learned
+
+* The difference between Server & Client Components in Next.js
+* Agile work methods
+* API integration with dummyjson
+* Responsiveness
+* CSS Modules
+* Reusable Components
+* Vercel hosting
+* GitHub Projects
+
+---
 ### 🛠️ My Contribution
 
 * **Frontend & UI Development:**
@@ -151,18 +165,15 @@ npm run dev
 
 ---
 
-## 📚 Lessons Learned
+## 💡Further development
 
-* The difference between Server & Client Components in Next.js
-* Agile work methods
-* API integration with dummyjson
-* Responsiveness
-* CSS Modules
-* Reusable Components
-* Vercel hosting
-* GitHub Projects
+If I were to continue developing this project, I would focus on the following key areas:
 
----
+1.  **Security and Authorization:** Implement **Authentication and Authorization** to protect the Admin route (`/admin`) and **secure Server Actions** (e.g., `addProduct`, `UpdateAction`) against unauthorized manipulation.
+2.  **State Scalability:** Migrate the cart state from client-based **`localStorage`** to a **Server-backed session** (e.g., using cookies and a database/cache) to achieve **consistency** and a superior user experience.
+3.  **Data Persistence:** Replace DummyJSON with a **production-ready database** solution, enabling full **CRUD functionality** and true data persistence.
+
+--
 
 ## ✍️ Contact
 
