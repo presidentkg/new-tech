@@ -13,6 +13,7 @@ This project was carried out over 4 weeks by a group of four people. The goal wa
 - 📂 [Project Structure](#-project-structure)
 - 📈 [Workflow](#-workflow)
 - 🗓 [Sprint Plan](#-sprint-plan)
+- 🛠️ My Contribution
 - 📚 [Lessons Learned](#-lessons-learned)
 - ✍️ [Contact](#-contact)
 
@@ -125,6 +126,28 @@ npm run dev
 * Fine-tuned responsiveness
 * Created the README file
 * Presented the results
+
+---
+### 🛠️ My Contribution
+
+* **Frontend & UI Development:**
+    * Designed and implemented the **Hero section** and **Product Swiper** on the homepage.
+    * Developed the **Footer** and the reusable **Product Card** component.
+    * Enhanced the **Product List** component with additional product details and logic.
+
+* **Cart State Persistence & Rendering (Client Logic):**
+    * **Implemented the mechanism** for the shopping cart by developing the logic to **read and write data to `localStorage`**.
+    * Developed the dedicated **Cart component** (client component) on the cart page, implementing core functionality such as:
+      * Retrieving the stored data from `localStorage`.
+      * Rendering the product list and calculating the total price.
+      * Allowing users to change the quantity of each product.
+      * Providing functionality to delete products from the cart.
+
+* **Admin Functionality:**
+    * Developed the **update functionality** (integrated with Server Actions) for editing existing product data on the Admin page.
+
+* **Responsiveness & Polish:**
+    * Ensured **full responsiveness** for all my created components, as well as the entire Admin page layout.
 
 ---
 
