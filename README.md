@@ -170,10 +170,10 @@ npm run dev
 If I were to continue developing this project, I would focus on the following key areas:
 
 1.  **Security and Authorization:** Implement **Authentication and Authorization** to protect the Admin route (`/admin`) and **secure Server Actions** (e.g., `addProduct`, `UpdateAction`) against unauthorized manipulation.
-2.  **State Scalability:** Migrate the cart state from client-based **`localStorage`** to a **Server-backed session** (e.g., using cookies and a database/cache) to achieve **consistency** and a superior user experience.
+2.  **State Scalability:** Migrate the cart state from client-based `localStorage` to a **Server-backed session** (e.g., using cookies and a database/cache) to achieve **consistency** and a superior user experience.
 3.  **Data Persistence:** Replace DummyJSON with a **production-ready database** solution, enabling full **CRUD functionality** and true data persistence.
 
---
+---
 
 ## ✍️ Contact
 
