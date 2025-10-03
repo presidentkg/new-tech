@@ -8,15 +8,15 @@ This project was carried out over 4 weeks by a group of four people. The goal wa
 - 📖 [About the Project](#-about-the-project)
 - ✨ [Features](#-features)
 - 🛠 [Technologies](#-technologies)
-- ⚙️ [Installation](#-installation)
+- ⚙️ [Installation](#installation)
 - 🚀 [Usage](#-usage)
 - 📂 [Project Structure](#-project-structure)
 - 📈 [Workflow](#-workflow)
-- 🗓 [Sprint Plan](#-sprint-plan)
+- 🗓 [Sprint Plan](#sprint-plan)
 - 📚 [Lessons Learned](#-lessons-learned)
 - 🛠️ [My Contribution](#my-contribution)
-- 💡 [Further development](#further-development)
-- ✍️ [Contact](#-contact)
+- 💡 [Further Development](#further-development)
+- ✍️ [Contact](#contact)
 
 
 ---
