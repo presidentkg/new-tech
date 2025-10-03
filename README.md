@@ -50,7 +50,7 @@ The purpose was to practice:
 
 ---
 
-## ⚙️ Installation
+## ⚙️ Installation <a id="installation"></a>
 ```bash
 # Clone the repository
 git clone https://github.com/presidentkg/new-tech
@@ -103,13 +103,13 @@ npm run dev
 
 ---
 
-## 🗓 Sprintplan
+## 🗓 Sprintplan <a id="sprint-plan"></a>
 
 ### Sprint 1 - Basic structure
 
 * Set up the Next.js project
 * Created menus & static pages
-* Hämta data från api:et och rendera enkel lista
+* Fetched data from the API and rendered a simple list
 
 ### Sprint 2 - Functionality
 
@@ -142,7 +142,7 @@ npm run dev
 * GitHub Projects
 
 ---
-## 🛠️ My Contribution
+## 🛠️ My Contribution <a id="my-contribution"></a>
 
 * **Frontend & UI Development:**
     * Designed and implemented the **Hero section** and **Product Swiper** on the homepage.
@@ -175,7 +175,7 @@ If I were to continue developing this project, I would focus on the following ke
 
 ---
 
-## ✍️ Contact
+## ✍️ Contact <a id="contact"></a>
 
 👤 Anders
 🔗[anderszone](https://github.com/anderszone)
