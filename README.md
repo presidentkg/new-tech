@@ -12,7 +12,7 @@ This project was carried out over 4 weeks by a group of four people. The goal wa
 - 🚀 [Usage](#-usage)
 - 📂 [Project Structure](#-project-structure)
 - 📈 [Workflow](#-workflow)
-- 🗓 [Sprint Plan](#sprint-plan)
+- 🗓 [Sprint Plan](#-sprint-plan)
 - 📚 [Lessons Learned](#-lessons-learned)
 - 🛠️ [My Contribution](#my-contribution)
 - 💡 [Further Development](#further-development)
@@ -103,7 +103,7 @@ npm run dev
 
 ---
 
-## 🗓 Sprintplan <a id="sprint-plan"></a>
+## 🗓 Sprint plan
 
 ### Sprint 1 - Basic structure
 
@@ -177,14 +177,10 @@ If I were to continue developing this project, I would focus on the following ke
 
 ## ✍️ Contact <a id="contact"></a>
 
-👤 Anders
-🔗[anderszone](https://github.com/anderszone)
+👤 Anders ➡️ 🔗[anderszone](https://github.com/anderszone)
 
-👤 Karl Ragnar
-🔗[presidentkg](https://github.com/presidentkg)
+👤 Karl Ragnar ➡️ 🔗[presidentkg](https://github.com/presidentkg)
 
-👤 Mikael
-🔗[Frawser](https://github.com/Frawser)
+👤 Mikael ➡️ 🔗[Frawser](https://github.com/Frawser)
 
-👤 Valeriia
-🔗[avreally](https://github.com/avreally)
+👤 Valeriia ➡️ 🔗[avreally](https://github.com/avreally)
